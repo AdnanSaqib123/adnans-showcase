@@ -1,12 +1,58 @@
-# React + Vite
+# Adnan's Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built using **React.js**, **Vite**, and **Tailwind CSS**. This project highlights my front-end development skills and showcases some of my selected work and projects in a clean, responsive, and modern design.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [View Live Portfolio](https://adnans-showcase-205.netlify.app)
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript (ES6+)
+- Responsive Design
+
+ ## Why do you need a portfolio?
+Professional way to showcase your work
+Increases your visibility and online presence
+Shows you’re more than just a resume
+
+## 📁 Installation & Setup
+
+To run this project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/AdnanSaqib123/adnans-showcase.git
+
+# Navigate to the project directory
+cd adnans-showcase
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The application will be accessible at `http://localhost:5173/`.
+
+## ✨ Features
+
+- Interactive and responsive portfolio layout
+- Smooth navigation between sections
+- Showcases personal projects and skills
+- Clean and minimalistic design with Tailwind CSS
+
+## 📈 Skills Demonstrated
+
+- React.js component-driven development
+- Responsive design and layout with Tailwind CSS
+- Fast development and build with Vite
+- Personal branding and portfolio creation
+
+---
+
+Project created and maintained by **Muhammad Adnan Saqib**.
