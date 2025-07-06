@@ -1,70 +1,5 @@
 import React, { useState } from 'react';
-
-const coursesData = [
-  {
-    id: 1,
-    name: 'Web Development',
-    issuer: 'Sololearn',
-    status: 'completed',
-    description: 'Covers the fundamentals of web development including HTML, CSS, and JavaScript for building interactive websites.',
-    duration: '2 months',
-    skills: ['HTML', 'CSS', 'JavaScript']
-  },
-  {
-    id: 2,
-    name: 'Introduction to SQL',
-    issuer: 'Sololearn',
-    status: 'completed',
-    description: 'Introduction to SQL databases, queries, and data manipulation for backend and data-driven applications.',
-    duration: '1 month',
-    skills: ['SQL', 'Databases', 'Queries']
-  },
-  {
-    id: 3,
-    name: 'Freelancing',
-    issuer: 'DigiSkills',
-    status: 'completed',
-    description: 'Covers the essentials of freelancing, including finding clients, managing projects, and building a successful freelance career.',
-    duration: '3 months',
-    skills: ['Freelancing', 'Client Management', 'Project Management']
-  },
-  {
-    id: 4,
-    name: 'Communication and Soft Skills',
-    issuer: 'DigiSkills',
-    status: 'completed',
-    description: 'Focuses on effective communication, teamwork, and soft skills for professional growth.',
-    duration: '3 months',
-    skills: ['Communication', 'Teamwork', 'Soft Skills']
-  },
-  {
-    id: 5,
-    name: 'Introduction to Networks',
-    issuer: 'VU-Cisco',
-    status: 'completed',
-    description: 'Introduction to computer networks, networking concepts, and protocols.',
-    duration: '2 months',
-    skills: ['Networking', 'Protocols', 'Cisco']
-  },
-  {
-    id: 6,
-    name: 'Seerat-Circle Course',
-    issuer: 'Al-Burhan',
-    status: 'in-progress',
-    description: 'A course focused on the life and teachings of the Prophet Muhammad (PBUH).',
-    duration: '6 months',
-    skills: ['Islamic Studies', 'History']
-  },
-  {
-    id: 7,
-    name: "Believer's Journey Course",
-    issuer: 'Al-Burhan',
-    status: 'completed',
-    description: 'A course designed to guide believers on their spiritual journey.',
-    duration: '3 months',
-    skills: ['Spirituality', 'Islamic Studies']
-  }
-];
+import { coursesData } from '../assets/data.js';
 
 const getStatusClasses = (status) => {
   switch (status) {
@@ -102,10 +37,6 @@ const Courses = () => {
     const startIndex = currentPage * coursesPerPage;
     return coursesData.slice(startIndex, startIndex + coursesPerPage);
   };
-
-  // Calculate overall progress
-  const completedCount = coursesData.filter(c => c.status === 'completed').length;
-  const overallProgress = Math.round((completedCount / coursesData.length) * 100);
 
   return (
     <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
