@@ -1,141 +1,118 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { projects } from '../assets/data.js';
+import { Eye, CaretLeft, CaretRight } from 'phosphor-react';
 
 const Work = () => {
-  const styles = {
-    section: {
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '6rem 2rem 2rem 2rem'
-    },
-    title: {
-      fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-      fontWeight: 'bold',
-      color: '#ffffff',
-      marginBottom: '3rem',
-      textAlign: 'center'
-    },
-    subtitle: {
-      color: '#94a3b8',
-      fontSize: '1.25rem',
-      textAlign: 'center',
-      marginBottom: '4rem',
-      maxWidth: '48rem'
-    },
-    projectsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '2rem',
-      maxWidth: '1200px',
-      width: '100%'
-    },
-    projectCard: {
-      background: 'rgba(30, 41, 59, 0.6)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '1rem',
-      padding: '2rem',
-      border: '1px solid #475569',
-      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-      cursor: 'pointer'
-    },
-    projectImage: {
-      width: '100%',
-      height: '200px',
-      background: 'linear-gradient(135deg, #475569 0%, #64748b 100%)',
-      borderRadius: '0.5rem',
-      marginBottom: '1.5rem',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: '#ffffff',
-      fontSize: '3rem'
-    },
-    projectTitle: {
-      color: '#ffffff',
-      fontSize: '1.5rem',
-      fontWeight: '600',
-      marginBottom: '1rem'
-    },
-    projectDescription: {
-      color: '#cbd5e1',
-      fontSize: '1rem',
-      lineHeight: '1.6',
-      marginBottom: '1.5rem'
-    },
-    projectTags: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '0.5rem'
-    },
-    tag: {
-      background: '#22c55e',
-      color: '#ffffff',
-      padding: '0.25rem 0.75rem',
-      borderRadius: '9999px',
-      fontSize: '0.875rem',
-      fontWeight: '500'
+  const [currentPage, setCurrentPage] = useState(0);
+  const projectsPerPage = 3;
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  const handlePreviewClick = (link) => {
+    window.open(link, '_blank');
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage((prev) => prev + 1);
     }
   };
 
-  const projects = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform with advanced features including user authentication, payment processing, and admin dashboard.',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      icon: '🛒'
-    },
-    {
-      id: 2,
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website showcasing creative work with smooth animations and modern design principles.',
-      tags: ['React', 'CSS3', 'JavaScript'],
-      icon: '🎨'
-    },
-    {
-      id: 3,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team features, and progress tracking.',
-      tags: ['Vue.js', 'Firebase', 'Tailwind'],
-      icon: '📋'
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
     }
-  ];
+  };
+
+  const handlePageClick = (pageIndex) => {
+    setCurrentPage(pageIndex);
+  };
+
+  const getCurrentProjects = () => {
+    const startIndex = currentPage * projectsPerPage;
+    return projects.slice(startIndex, startIndex + projectsPerPage);
+  };
 
   return (
-    <section id="work" style={styles.section}>
-      <h2 style={styles.title}>My Work</h2>
-      <p style={styles.subtitle}>
+    <section id="work" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
+      <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
+        My Work
+      </h2>
+      <p className="text-slate-400 text-xl text-center mb-16 max-w-4xl">
         Here's a collection of projects I've worked on, showcasing my skills in design and development.
       </p>
-      
-      <div style={styles.projectsGrid}>
-        {projects.map((project) => (
-          <div 
-            key={project.id} 
-            style={styles.projectCard}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateY(-8px)';
-              e.target.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = 'none';
-            }}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full mb-12">
+        {getCurrentProjects().map((project) => (
+          <div
+            key={project.id}
+            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-8 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 cursor-pointer group"
           >
-            <div style={styles.projectImage}>
-              {project.icon}
+            <div className="w-full h-48 bg-gradient-to-br from-slate-600 to-slate-500 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+              <img src={project.image} alt="Project" className="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300" />
             </div>
-            <h3 style={styles.projectTitle}>{project.title}</h3>
-            <p style={styles.projectDescription}>{project.description}</p>
-            <div style={styles.projectTags}>
+            <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-blue-400 transition-colors duration-300">
+              {project.title}
+            </h3>
+            <p className="text-slate-300 text-base leading-relaxed mb-6">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
               {project.tags.map((tag, index) => (
-                <span key={index} style={styles.tag}>{tag}</span>
+                <span
+                  key={index}
+                  className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium hover:bg-green-600 transition-colors duration-300"
+                >
+                  {tag}
+                </span>
               ))}
             </div>
+            <button
+              onClick={() => handlePreviewClick(project.link)}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
+            >
+              <Eye size={20} weight="bold" />
+              Preview Project
+            </button>
           </div>
         ))}
+      </div>
+
+      {/* Pagination Controls */}
+      <div className="flex items-center justify-center gap-6">
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevPage}
+          className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={currentPage === 0}
+        >
+          <CaretLeft size={20} weight="bold" />
+          Previous
+        </button>
+
+        {/* Dot Indicators */}
+        <div className="flex gap-3">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageClick(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${index === currentPage
+                ? 'bg-blue-500 shadow-lg shadow-blue-500/50'
+                : 'bg-gray-500 hover:bg-gray-400'
+                }`}
+              aria-label={`Go to page ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Next Button */}
+        <button
+          onClick={handleNextPage}
+          className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={currentPage === totalPages - 1}
+        >
+          Next
+          <CaretRight size={20} weight="bold" />
+        </button>
       </div>
     </section>
   );
