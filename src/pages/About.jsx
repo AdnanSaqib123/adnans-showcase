@@ -106,12 +106,6 @@ const About = () => {
     }
   };
 
-  const experiences = [
-    { icon: '🎓', text: 'Bachelor in Computer Science' },
-    { icon: '💼', text: '5+ years of design experience' },
-    { icon: '🏆', text: '50+ successful projects completed' },
-    { icon: '🌍', text: 'Worked with clients worldwide' }
-  ];
 
   return (
     <section id="about" style={styles.section}>
@@ -130,23 +124,6 @@ const About = () => {
             and user satisfaction.
           </p>
           
-          <div style={styles.experienceList}>
-            {experiences.map((exp, index) => (
-              <div 
-                key={index} 
-                style={styles.experienceItem}
-                onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(34, 197, 94, 0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.05)';
-                }}
-              >
-                <span style={styles.experienceIcon}>{exp.icon}</span>
-                <span style={styles.experienceText}>{exp.text}</span>
-              </div>
-            ))}
-          </div>
         </div>
         
         <div style={styles.imageContainer}>
@@ -156,24 +133,7 @@ const About = () => {
         </div>
       </div>
       
-      <div style={styles.statsContainer}>
-        <div style={styles.stat}>
-          <div style={styles.statNumber}>5+</div>
-          <div style={styles.statLabel}>Years Experience</div>
-        </div>
-        <div style={styles.stat}>
-          <div style={styles.statNumber}>50+</div>
-          <div style={styles.statLabel}>Projects Completed</div>
-        </div>
-        <div style={styles.stat}>
-          <div style={styles.statNumber}>30+</div>
-          <div style={styles.statLabel}>Happy Clients</div>
-        </div>
-        <div style={styles.stat}>
-          <div style={styles.statNumber}>100%</div>
-          <div style={styles.statLabel}>Client Satisfaction</div>
-        </div>
-      </div>
+   
     </section>
   );
 };
