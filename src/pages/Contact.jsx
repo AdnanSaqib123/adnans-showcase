@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { contactInfo, socialLinks } from '../assets/data.js';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,134 +7,6 @@ const Contact = () => {
     email: '',
     message: ''
   });
-
-  const styles = {
-    section: {
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '6rem 2rem 2rem 2rem'
-    },
-    container: {
-      maxWidth: '1000px',
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: '4rem',
-      alignItems: 'start'
-    },
-    title: {
-      fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-      fontWeight: 'bold',
-      color: '#ffffff',
-      marginBottom: '3rem',
-      textAlign: 'center',
-      gridColumn: '1 / -1'
-    },
-    contactInfo: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2rem'
-    },
-    infoItem: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '1rem',
-      padding: '1.5rem',
-      background: 'rgba(30, 41, 59, 0.6)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '1rem',
-      border: '1px solid #475569',
-      transition: 'transform 0.3s ease'
-    },
-    infoIcon: {
-      fontSize: '2rem',
-      color: '#22c55e'
-    },
-    infoContent: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '0.25rem'
-    },
-    infoLabel: {
-      color: '#94a3b8',
-      fontSize: '0.875rem',
-      fontWeight: '500'
-    },
-    infoValue: {
-      color: '#ffffff',
-      fontSize: '1rem',
-      fontWeight: '500'
-    },
-    form: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.5rem'
-    },
-    formGroup: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '0.5rem'
-    },
-    label: {
-      color: '#ffffff',
-      fontSize: '1rem',
-      fontWeight: '500'
-    },
-    input: {
-      padding: '1rem',
-      background: 'rgba(30, 41, 59, 0.6)',
-      border: '1px solid #475569',
-      borderRadius: '0.5rem',
-      color: '#ffffff',
-      fontSize: '1rem',
-      transition: 'border-color 0.3s ease'
-    },
-    textarea: {
-      padding: '1rem',
-      background: 'rgba(30, 41, 59, 0.6)',
-      border: '1px solid #475569',
-      borderRadius: '0.5rem',
-      color: '#ffffff',
-      fontSize: '1rem',
-      minHeight: '120px',
-      resize: 'vertical',
-      transition: 'border-color 0.3s ease'
-    },
-    submitButton: {
-      background: '#22c55e',
-      color: '#ffffff',
-      padding: '1rem 2rem',
-      border: 'none',
-      borderRadius: '0.5rem',
-      fontSize: '1rem',
-      fontWeight: '600',
-      cursor: 'pointer',
-      transition: 'background 0.3s ease',
-      marginTop: '1rem'
-    },
-    socialLinks: {
-      display: 'flex',
-      gap: '1rem',
-      marginTop: '2rem'
-    },
-    socialLink: {
-      width: '50px',
-      height: '50px',
-      background: 'rgba(30, 41, 59, 0.6)',
-      border: '1px solid #475569',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '1.5rem',
-      color: '#22c55e',
-      transition: 'all 0.3s ease',
-      cursor: 'pointer'
-    }
-  };
 
   const handleInputChange = (e) => {
     setFormData({
@@ -146,140 +19,84 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    alert("Thank you for your message! I'll get back to you soon.");
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const contactInfo = [
-    { icon: '📧', label: 'Email', value: 'adnansaqib205@gmail.com' },
-    { icon: '📱', label: 'Phone', value: '0319-5923729 & 0348-0014289' },
-    { icon: '📍', label: 'Location', value: 'Rawalpindi, Pakistan' },
-    { icon: '💼', label: 'Availability', value: 'Open for opportunities' }
-  ];
-
-  const socialLinks = [
-    { icon: '🐙', url: 'https://github.com' },
-    { icon: '💼', url: 'https://linkedin.com' },
-    { icon: '🐦', url: 'https://twitter.com' },
-    { icon: '📸', url: 'https://instagram.com' }
-  ];
-
   return (
-    <section id="contact" style={styles.section}>
-      <h2 style={styles.title}>Get In Touch</h2>
-
-      <div style={styles.container}>
-        <div style={styles.contactInfo}>
-          <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '1rem' }}>
-            Let's Connect
-          </h3>
+    <section id="contact" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
+      <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">Get In Touch</h2>
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        {/* Contact Info */}
+        <div className="flex flex-col gap-6">
+          <h3 className="text-white text-2xl text-center sm:text-left font-semibold mb-2">Let's Connect</h3>
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              style={styles.infoItem}
-              onMouseEnter={(e) => {
-                e.target.style.transform = 'translateX(8px)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = 'translateX(0)';
-              }}
+              className="flex items-center gap-4 p-6 bg-slate-800/60 backdrop-blur rounded-xl border border-slate-600 transition-all duration-300 hover:translate-x-2"
             >
-              <span style={styles.infoIcon}>{info.icon}</span>
-              <div style={styles.infoContent}>
-                <span style={styles.infoLabel}>{info.label}</span>
-                <span style={styles.infoValue}>{info.value}</span>
+              <span className="text-2xl text-green-500">{info.icon}</span>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-slate-400 text-sm font-medium">{info.label}</span>
+                <span className="text-white text-base font-semibold">{info.value}</span>
               </div>
             </div>
           ))}
-
-          <div style={styles.socialLinks}>
+          <div className="flex justify-center gap-4 mt-4">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={styles.socialLink}
-                onMouseEnter={(e) => {
-                  e.target.style.background = '#22c55e';
-                  e.target.style.color = '#ffffff';
-                  e.target.style.transform = 'scale(1.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = 'rgba(30, 41, 59, 0.6)';
-                  e.target.style.color = '#22c55e';
-                  e.target.style.transform = 'scale(1)';
-                }}
+                className="w-12 h-12 bg-slate-800/60 border border-slate-600 rounded-full flex items-center justify-center text-2xl text-green-500 transition-all duration-300 hover:bg-green-500 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500"
               >
                 {social.icon}
               </a>
             ))}
           </div>
         </div>
-
-        <form style={styles.form} onSubmit={handleSubmit}>
-          <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '1rem' }}>
-            Send Message
-          </h3>
-          <div style={styles.formGroup}>
-            <label style={styles.label}>Name</label>
+        {/* Contact Form */}
+        <form className="flex flex-col gap-6 " onSubmit={handleSubmit}>
+          <h3 className="text-white text-center sm:text-left text-2xl font-semibold mb-2">Send Message</h3>
+          <div className="flex flex-col gap-2">
+            <label className="text-white text-base font-medium">Name</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleInputChange}
-              style={styles.input}
+              placeholder="Enter your name"
               required
-              onFocus={(e) => {
-                e.target.style.borderColor = '#22c55e';
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = '#475569';
-              }}
+              className="p-4 bg-slate-800/60 border border-slate-600 rounded-lg text-white text-base focus:outline-none focus:border-green-500 transition-colors duration-300"
             />
           </div>
-          <div style={styles.formGroup}>
-            <label style={styles.label}>Email</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-white text-base font-medium">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              style={styles.input}
+              placeholder="Enter your email"
               required
-              onFocus={(e) => {
-                e.target.style.borderColor = '#22c55e';
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = '#475569';
-              }}
+              className="p-4 bg-slate-800/60 border border-slate-600 rounded-lg text-white text-base focus:outline-none focus:border-green-500 transition-colors duration-300"
             />
           </div>
-          <div style={styles.formGroup}>
-            <label style={styles.label}>Message</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-white text-base font-medium">Message</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              style={styles.textarea}
+              placeholder="Enter your message"
               required
-              onFocus={(e) => {
-                e.target.style.borderColor = '#22c55e';
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = '#475569';
-              }}
+              className="p-4 bg-slate-800/60 border border-slate-600 rounded-lg text-white text-base min-h-[120px] resize-y focus:outline-none focus:border-green-500 transition-colors duration-300"
             />
           </div>
           <button
             type="submit"
-            style={styles.submitButton}
-            onMouseEnter={(e) => {
-              e.target.style.background = '#16a34a';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = '#22c55e';
-            }}
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             Send Message
           </button>
@@ -289,4 +106,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

@@ -1,327 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { coursesData } from '../assets/data.js';
+
+const getStatusClasses = (status) => {
+  switch (status) {
+    case 'completed':
+      return 'bg-green-500 text-white';
+    case 'in-progress':
+      return 'bg-yellow-500 text-white';
+    default:
+      return 'bg-gray-400 text-white';
+  }
+};
 
 const Courses = () => {
-  const styles = {
-    section: {
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '6rem 2rem 2rem 2rem'
-    },
-    title: {
-      fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-      fontWeight: 'bold',
-      color: '#ffffff',
-      marginBottom: '3rem',
-      textAlign: 'center'
-    },
-    subtitle: {
-      color: '#94a3b8',
-      fontSize: '1.25rem',
-      textAlign: 'center',
-      marginBottom: '4rem',
-      maxWidth: '48rem'
-    },
-    coursesContainer: {
-      maxWidth: '1200px',
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-      gap: '2rem'
-    },
-    courseCard: {
-      background: 'rgba(30, 41, 59, 0.6)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '1rem',
-      padding: '2rem',
-      border: '1px solid #475569',
-      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-      cursor: 'pointer',
-      position: 'relative',
-      overflow: 'hidden'
-    },
-    courseHeader: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '1rem',
-      marginBottom: '1.5rem'
-    },
-    courseIcon: {
-      width: '60px',
-      height: '60px',
-      background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '1.5rem',
-      color: '#ffffff'
-    },
-    courseInfo: {
-      flex: 1
-    },
-    courseName: {
-      color: '#ffffff',
-      fontSize: '1.25rem',
-      fontWeight: '600',
-      marginBottom: '0.5rem'
-    },
-    courseIssuer: {
-      color: '#22c55e',
-      fontSize: '1rem',
-      fontWeight: '500',
-      marginBottom: '0.25rem'
-    },
-    courseDate: {
-      color: '#94a3b8',
-      fontSize: '0.875rem'
-    },
-    courseDescription: {
-      color: '#cbd5e1',
-      fontSize: '1rem',
-      lineHeight: '1.6',
-      marginBottom: '1.5rem'
-    },
-    courseDetails: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1rem'
-    },
-    detailItem: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '0.75rem',
-      background: 'rgba(255, 255, 255, 0.05)',
-      borderRadius: '0.5rem'
-    },
-    detailLabel: {
-      color: '#94a3b8',
-      fontSize: '0.875rem',
-      fontWeight: '500'
-    },
-    detailValue: {
-      color: '#ffffff',
-      fontSize: '0.875rem',
-      fontWeight: '600'
-    },
-    statusBadge: {
-      padding: '0.25rem 0.75rem',
-      borderRadius: '9999px',
-      fontSize: '0.75rem',
-      fontWeight: '600',
-      textTransform: 'uppercase'
-    },
-    statusCompleted: {
-      background: '#22c55e',
-      color: '#ffffff'
-    },
-    statusInProgress: {
-      background: '#f59e0b',
-      color: '#ffffff'
-    },
-    statusUpcoming: {
-      background: '#6b7280',
-      color: '#ffffff'
-    },
-    skillsLearned: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '0.5rem',
-      marginTop: '1rem'
-    },
-    skillTag: {
-      background: 'rgba(34, 197, 94, 0.2)',
-      color: '#22c55e',
-      padding: '0.25rem 0.75rem',
-      borderRadius: '9999px',
-      fontSize: '0.75rem',
-      fontWeight: '500',
-      border: '1px solid rgba(34, 197, 94, 0.3)'
-    },
-    progressBar: {
-      width: '100%',
-      height: '6px',
-      background: 'rgba(255, 255, 255, 0.1)',
-      borderRadius: '3px',
-      marginTop: '1rem',
-      overflow: 'hidden'
-    },
-    progressFill: {
-      height: '100%',
-      background: 'linear-gradient(90deg, #22c55e 0%, #16a34a 100%)',
-      borderRadius: '3px',
-      transition: 'width 0.3s ease'
+  const [currentPage, setCurrentPage] = useState(0);
+  const coursesPerPage = 3;
+  const totalPages = Math.ceil(coursesData.length / coursesPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage((prev) => prev + 1);
     }
   };
 
-  const coursesData = [
-    {
-      id: 1,
-      name: 'AWS Certified Developer',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      status: 'completed',
-      progress: 100,
-      description: 'Comprehensive course covering AWS development services, deployment, and best practices for cloud-native applications.',
-      duration: '6 months',
-      level: 'Intermediate',
-      skills: ['AWS Lambda', 'DynamoDB', 'API Gateway', 'CloudFormation', 'DevOps'],
-      icon: '☁️'
-    },
-    {
-      id: 2,
-      name: 'Google UX Design',
-      issuer: 'Google',
-      date: '2023',
-      status: 'completed',
-      progress: 100,
-      description: 'Professional UX design course covering user research, wireframing, prototyping, and user testing methodologies.',
-      duration: '4 months',
-      level: 'Beginner to Advanced',
-      skills: ['User Research', 'Wireframing', 'Prototyping', 'User Testing', 'Figma'],
-      icon: '🎨'
-    },
-    {
-      id: 3,
-      name: 'React Developer',
-      issuer: 'Meta',
-      date: '2023',
-      status: 'completed',
-      progress: 100,
-      description: 'Advanced React development course covering hooks, context, performance optimization, and modern React patterns.',
-      duration: '3 months',
-      level: 'Advanced',
-      skills: ['React Hooks', 'Context API', 'Performance', 'Testing', 'TypeScript'],
-      icon: '⚛️'
-    },
-    {
-      id: 4,
-      name: 'UI/UX Design Specialization',
-      issuer: 'Coursera',
-      date: '2022',
-      status: 'completed',
-      progress: 100,
-      description: 'Comprehensive design specialization covering visual design, interaction design, and user experience principles.',
-      duration: '5 months',
-      level: 'Intermediate',
-      skills: ['Visual Design', 'Interaction Design', 'User Experience', 'Adobe Creative Suite'],
-      icon: '✨'
-    },
-    {
-      id: 5,
-      name: 'Advanced JavaScript',
-      issuer: 'Udemy',
-      date: '2024',
-      status: 'in-progress',
-      progress: 75,
-      description: 'Deep dive into advanced JavaScript concepts including ES6+, async programming, and modern patterns.',
-      duration: '2 months',
-      level: 'Advanced',
-      skills: ['ES6+', 'Async/Await', 'Promises', 'Modules', 'Design Patterns'],
-      icon: '📚'
-    },
-    {
-      id: 6,
-      name: 'Machine Learning Basics',
-      issuer: 'Coursera',
-      date: '2024',
-      status: 'upcoming',
-      progress: 0,
-      description: 'Introduction to machine learning concepts, algorithms, and practical applications in web development.',
-      duration: '3 months',
-      level: 'Beginner',
-      skills: ['Python', 'TensorFlow', 'Data Analysis', 'ML Algorithms'],
-      icon: '🤖'
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
     }
-  ];
+  };
 
-  const getStatusStyle = (status) => {
-    switch (status) {
-      case 'completed':
-        return { ...styles.statusBadge, ...styles.statusCompleted };
-      case 'in-progress':
-        return { ...styles.statusBadge, ...styles.statusInProgress };
-      case 'upcoming':
-        return { ...styles.statusBadge, ...styles.statusUpcoming };
-      default:
-        return styles.statusBadge;
-    }
+  const handlePageClick = (pageIndex) => {
+    setCurrentPage(pageIndex);
+  };
+
+  const getCurrentCourses = () => {
+    const startIndex = currentPage * coursesPerPage;
+    return coursesData.slice(startIndex, startIndex + coursesPerPage);
   };
 
   return (
-    <section id="courses" style={styles.section}>
-      <h2 style={styles.title}>Professional Certifications & Courses</h2>
-      <p style={styles.subtitle}>
-        Continuous learning journey through industry-recognized certifications and specialized courses.
-      </p>
-      
-      <div style={styles.coursesContainer}>
-        {coursesData.map((course) => (
-          <div 
-            key={course.id} 
-            style={styles.courseCard}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateY(-8px)';
-              e.target.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = 'none';
-            }}
+    <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
+      <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-12 text-center">Professional Certifications & Courses</h2>
+      <p className="text-slate-400 text-md sm:text-xl text-center mb-16 max-w-4xl">Continuous learning journey through industry-recognized certifications and specialized courses.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full mb-12">
+        {getCurrentCourses().map((course) => (
+          <div
+            key={course.id}
+            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-8 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 group overflow-hidden"
           >
-            <div style={styles.courseHeader}>
-              <div style={styles.courseIcon}>
-                {course.icon}
+            <div className="flex items-center gap-4 mb-6">
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl text-white ${getStatusClasses(course.status)}`}>
+                {course.name[0]}
               </div>
-              <div style={styles.courseInfo}>
-                <h3 style={styles.courseName}>{course.name}</h3>
-                <p style={styles.courseIssuer}>{course.issuer}</p>
-                <p style={styles.courseDate}>{course.date}</p>
-              </div>
-            </div>
-            
-            <p style={styles.courseDescription}>{course.description}</p>
-            
-            <div style={styles.courseDetails}>
-              <div style={styles.detailItem}>
-                <span style={styles.detailLabel}>Duration:</span>
-                <span style={styles.detailValue}>{course.duration}</span>
-              </div>
-              <div style={styles.detailItem}>
-                <span style={styles.detailLabel}>Level:</span>
-                <span style={styles.detailValue}>{course.level}</span>
-              </div>
-              <div style={styles.detailItem}>
-                <span style={styles.detailLabel}>Status:</span>
-                <span style={getStatusStyle(course.status)}>
-                  {course.status.replace('-', ' ')}
-                </span>
+              <div className="flex-1">
+                <h3 className="text-white text-xl font-semibold mb-1">{course.name}</h3>
+                <p className="text-green-500 text-base font-medium mb-0.5">{course.issuer}</p>
               </div>
             </div>
-
-            {course.progress > 0 && (
-              <div style={styles.progressBar}>
-                <div 
-                  style={{
-                    ...styles.progressFill,
-                    width: `${course.progress}%`
-                  }}
-                />
+            <p className="text-slate-300 text-base leading-relaxed mb-4">{course.description}</p>
+            <div className="flex flex-col gap-2 mb-4">
+              <div className="flex items-center justify-between bg-white/5 rounded-md px-3 py-2">
+                <span className="text-slate-400 text-sm font-medium">Duration:</span>
+                <span className="text-white text-sm font-semibold">{course.duration}</span>
               </div>
-            )}
-            
-            <div style={styles.skillsLearned}>
+              <div className="flex items-center justify-between bg-white/5 rounded-md px-3 py-2">
+                <span className="text-slate-400 text-sm font-medium">Status:</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${getStatusClasses(course.status)}`}>{course.status.replace('-', ' ')}</span>
+              </div>
+            </div>
+            {/* Separator line before skills */}
+            <div className="w-full h-2 rounded-full bg-green-500/50 my-4"></div>
+            <div className="flex flex-wrap gap-2 mt-2">
               {course.skills.map((skill, index) => (
-                <span key={index} style={styles.skillTag}>
+                <span key={index} className="bg-green-500/20 text-green-500 px-3 py-1 rounded-full text-xs font-medium border border-green-500/30">
                   {skill}
                 </span>
               ))}
             </div>
           </div>
         ))}
+      </div>
+      {/* Pagination Controls */}
+      <div className="flex items-center justify-center gap-6 mb-8">
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevPage}
+          className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={currentPage === 0}
+        >
+          Previous
+        </button>
+        {/* Dot Indicators */}
+        <div className="flex gap-3">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageClick(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${index === currentPage
+                ? 'bg-blue-500 shadow-lg shadow-blue-500/50'
+                : 'bg-gray-500 hover:bg-gray-400'
+                }`}
+              aria-label={`Go to page ${index + 1}`}
+            />
+          ))}
+        </div>
+        {/* Next Button */}
+        <button
+          onClick={handleNextPage}
+          className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={currentPage === totalPages - 1}
+        >
+          Next
+        </button>
       </div>
     </section>
   );

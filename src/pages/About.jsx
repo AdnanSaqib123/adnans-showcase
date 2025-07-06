@@ -1,139 +1,32 @@
 import React from 'react';
+import profile2 from '../assets/images/profile1.jpg';
 
 const About = () => {
-  const styles = {
-    section: {
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '6rem 2rem 2rem 2rem'
-    },
-    container: {
-      maxWidth: '1000px',
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: '4rem',
-      alignItems: 'center'
-    },
-    content: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2rem'
-    },
-    title: {
-      fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-      fontWeight: 'bold',
-      color: '#ffffff',
-      marginBottom: '1rem'
-    },
-    subtitle: {
-      color: '#22c55e',
-      fontSize: '1.25rem',
-      fontWeight: '500',
-      marginBottom: '1rem'
-    },
-    description: {
-      color: '#cbd5e1',
-      fontSize: '1.125rem',
-      lineHeight: '1.8',
-      marginBottom: '2rem'
-    },
-    statsContainer: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '1.5rem',
-      marginTop: '2rem'
-    },
-    stat: {
-      background: 'rgba(30, 41, 59, 0.6)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '1rem',
-      padding: '1.5rem',
-      border: '1px solid #475569',
-      textAlign: 'center'
-    },
-    statNumber: {
-      color: '#22c55e',
-      fontSize: '2.5rem',
-      fontWeight: 'bold',
-      marginBottom: '0.5rem'
-    },
-    statLabel: {
-      color: '#94a3b8',
-      fontSize: '1rem',
-      fontWeight: '500'
-    },
-    imageContainer: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    profileImage: {
-      width: '300px',
-      height: '300px',
-      background: 'linear-gradient(135deg, #fb923c 0%, #ec4899 100%)',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '8rem',
-      boxShadow: '0 0 40px rgba(34, 197, 94, 0.3)',
-      animation: 'pulse-glow 2s ease-in-out infinite'
-    },
-    experienceList: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1rem'
-    },
-    experienceItem: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '1rem',
-      padding: '1rem',
-      background: 'rgba(255, 255, 255, 0.05)',
-      borderRadius: '0.5rem',
-      transition: 'background 0.3s ease'
-    },
-    experienceIcon: {
-      fontSize: '1.5rem'
-    },
-    experienceText: {
-      color: '#ffffff',
-      fontSize: '1rem'
-    }
-  };
-
-
   return (
-    <section id="about" style={styles.section}>
-      <div style={styles.container}>
-        <div style={styles.content}>
-          <h2 style={styles.title}>About Me</h2>
-          <p style={styles.subtitle}>Passionate Designer & Developer</p>
-          <p style={styles.description}>
-            I'm a creative professional with a passion for designing meaningful digital experiences. 
-            With over 5 years of experience in both design and development, I bridge the gap between 
+    <section id="about" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24 bg-transparent">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        {/* Content Section */}
+        <div className="flex flex-col gap-4 order-1">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center md:text-left">About Me</h2>
+          <p className="text-green-500 text-lg font-semibold mb-2 text-center md:text-left">Passionate Frontend Web Developer</p>
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed">
+            I'm a creative professional with a passion for designing meaningful digital experiences.
+            With over 5 years of experience in both design and development, I bridge the gap between
             beautiful aesthetics and functional user experiences.
           </p>
-          <p style={styles.description}>
-            My approach combines user-centered design principles with modern development practices, 
-            ensuring that every project not only looks great but also delivers exceptional functionality 
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed">
+            My approach combines user-centered design principles with modern development practices,
+            ensuring that every project not only looks great but also delivers exceptional functionality
             and user satisfaction.
           </p>
-          
         </div>
-        
-        <div style={styles.imageContainer}>
-          <div style={styles.profileImage}>
-            👨‍💻
+        {/* Image Section */}
+        <div className="flex justify-center items-center order-2 mb-8 md:mb-0">
+          <div className="w-60 h-60 md:w-72 md:h-72 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center shadow-2xl animate-pulse-glow overflow-hidden">
+            <img src={profile2} alt="Profile" className="w-full h-full object-cover rounded-full" />
           </div>
         </div>
       </div>
-      
-   
     </section>
   );
 };
