@@ -151,9 +151,9 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: '📧', label: 'Email', value: 'hello@adnan.com' },
-    { icon: '📱', label: 'Phone', value: '+1 (555) 123-4567' },
-    { icon: '📍', label: 'Location', value: 'New York, NY' },
+    { icon: '📧', label: 'Email', value: 'adnansaqib205@gmail.com' },
+    { icon: '📱', label: 'Phone', value: '0319-5923729 & 0348-0014289' },
+    { icon: '📍', label: 'Location', value: 'Rawalpindi, Pakistan' },
     { icon: '💼', label: 'Availability', value: 'Open for opportunities' }
   ];
 
@@ -167,15 +167,15 @@ const Contact = () => {
   return (
     <section id="contact" style={styles.section}>
       <h2 style={styles.title}>Get In Touch</h2>
-      
+
       <div style={styles.container}>
         <div style={styles.contactInfo}>
           <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '1rem' }}>
             Let's Connect
           </h3>
           {contactInfo.map((info, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               style={styles.infoItem}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'translateX(8px)';
@@ -191,7 +191,7 @@ const Contact = () => {
               </div>
             </div>
           ))}
-          
+
           <div style={styles.socialLinks}>
             {socialLinks.map((social, index) => (
               <a
@@ -216,7 +216,7 @@ const Contact = () => {
             ))}
           </div>
         </div>
-        
+
         <form style={styles.form} onSubmit={handleSubmit}>
           <h3 style={{ color: '#ffffff', fontSize: '1.5rem', marginBottom: '1rem' }}>
             Send Message
@@ -271,8 +271,8 @@ const Contact = () => {
               }}
             />
           </div>
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             style={styles.submitButton}
             onMouseEnter={(e) => {
               e.target.style.background = '#16a34a';
