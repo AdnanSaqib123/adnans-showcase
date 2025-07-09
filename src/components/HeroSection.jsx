@@ -1,159 +1,65 @@
 import React from 'react';
+import profileImg from '../assets/images/profile1.jpg';
 
 const HeroSection = () => {
-  const styles = {
-    mainContent: {
-      position: 'relative',
-      zIndex: 10,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '100vh',
-      padding: '0 1rem'
-    },
-    profileSection: {
-      marginBottom: '2rem',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center'
-    },
-    avatar: {
-      width: '5rem',
-      height: '5rem',
-      background: 'linear-gradient(135deg, #fb923c 0%, #ec4899 100%)',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '1.5rem',
-      marginBottom: '1rem',
-      boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
-      animation: 'pulse-glow 2s ease-in-out infinite'
-    },
-    statusBadge: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      background: 'rgba(30, 41, 59, 0.8)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '9999px',
-      padding: '0.5rem 1rem',
-      border: '1px solid #475569'
-    },
-    statusDot: {
-      width: '0.5rem',
-      height: '0.5rem',
-      background: '#22c55e',
-      borderRadius: '50%',
-      animation: 'pulse 2s infinite'
-    },
-    statusText: {
-      fontSize: '0.875rem',
-      color: '#cbd5e1'
-    },
-    heroTitle: {
-      fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
-      fontWeight: 'bold',
-      color: '#ffffff',
-      marginBottom: '1.5rem',
-      lineHeight: '1.2',
-      textAlign: 'center',
-      maxWidth: '64rem'
-    },
-    heroSubtitle: {
-      background: 'linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text'
-    },
-    description: {
-      marginBottom: '3rem'
-    },
-    descriptionText: {
-      color: '#94a3b8',
-      fontSize: '1.125rem',
-      margin: '0.5rem 0',
-      textAlign: 'center'
-    },
-    buttonContainer: {
-      display: 'flex',
-      gap: '1rem',
-      flexWrap: 'wrap',
-      justifyContent: 'center'
-    },
-    primaryButton: {
-      background: '#ffffff',
-      color: '#0f172a',
-      padding: '1rem 2rem',
-      borderRadius: '9999px',
-      fontWeight: '500',
-      border: 'none',
-      cursor: 'pointer',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      transition: 'all 0.3s ease',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-      fontSize: '1rem'
-    },
-    secondaryButton: {
-      background: '#1e293b',
-      color: '#ffffff',
-      padding: '1rem 2rem',
-      borderRadius: '9999px',
-      fontWeight: '500',
-      border: '1px solid #475569',
-      cursor: 'pointer',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      transition: 'all 0.3s ease',
-      fontSize: '1rem'
+  // Smooth scroll to contact section
+  const handleLetsTalkClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <div style={styles.mainContent}>
+    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
       {/* Profile Section */}
-      <div style={styles.profileSection}>
-        <div style={styles.avatar}>
-          👨‍💻
-        </div>
-        <div style={styles.statusBadge}>
-          <div style={styles.statusDot}></div>
-          <span style={styles.statusText}>Available for opportunities</span>
+      <div className="mb-8 flex flex-col items-center">
+        <img
+          src={profileImg}
+          alt="Profile"
+          className="w-28 h-28 rounded-full object-cover mb-4 shadow-lg border-4 border-orange-400 animate-pulse-glow"
+        />
+        <div className="flex items-center gap-2 bg-slate-800/80 backdrop-blur rounded-full px-4 py-2 border border-slate-600">
+          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <span className="text-sm text-slate-300">Available for opportunities</span>
         </div>
       </div>
 
       {/* Hero Text */}
-      <div style={styles.heroTitle}>
+      <div className="font-bold text-white mb-6 leading-tight text-center max-w-4xl text-[clamp(2.5rem,8vw,4.5rem)]">
         Welcome to
         <br />
-        <span style={styles.heroSubtitle}>
+        <span className="bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent">
           my digital humble abode
         </span>
       </div>
       
-      <div style={styles.description}>
-        <p style={styles.descriptionText}>
+      <div className="mb-12">
+        <p className="text-slate-400 text-lg my-2 text-center">
           I'm an independent designer.
         </p>
-        <p style={styles.descriptionText}>
+        <p className="text-slate-400 text-lg my-2 text-center">
           My interest lies in brand experience, and user experience.
         </p>
       </div>
 
       {/* CTA Buttons */}
-      <div style={styles.buttonContainer}>
-        <button style={styles.primaryButton} className="primary-button">
+      <div className="flex gap-4 flex-wrap justify-center">
+        <button
+          className="bg-white text-slate-900 py-4 px-8 rounded-full font-medium border-none cursor-pointer flex items-center gap-2 transition-all duration-300 shadow hover:bg-slate-100 hover:scale-105 primary-button"
+          onClick={handleLetsTalkClick}
+        >
           <span>👋</span>
           <span>Let's talk</span>
         </button>
-        <button style={styles.secondaryButton} className="secondary-button">
-          <span>Get Template</span>
+        <a
+          href="/MuhammadAdnanSaqibResume.pdf"
+          download
+          className="bg-slate-900 text-white py-4 px-8 rounded-full font-medium border border-slate-600 cursor-pointer flex items-center gap-2 transition-all duration-300 hover:bg-slate-800 hover:scale-105 secondary-button"
+        >
+          <span>Download CV</span>
           <span>↗</span>
-        </button>
+        </a>
       </div>
     </div>
   );
