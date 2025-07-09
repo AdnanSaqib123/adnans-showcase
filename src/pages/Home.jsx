@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
+// import Experience from './Experience';
 import Work from './Work';
 import Skills from './Skills';
 import Education from './Education';
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
+      {/* <Experience /> */}
       <Work />
       <Skills />
       <Education />
