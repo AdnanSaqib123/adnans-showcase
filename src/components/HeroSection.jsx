@@ -26,20 +26,23 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Text */}
-      <div className="font-bold text-white mb-6 leading-tight text-center max-w-4xl text-[clamp(2.5rem,8vw,4.5rem)]">
+      <div className="font-bold text-white mb-2 leading-tight text-center max-w-4xl text-[clamp(2.5rem,8vw,4.5rem)]">
+        Muhammad Adnan Saqib
+      </div>
+      <div className="font-bold text-white mb-6 leading-tight text-center max-w-4xl text-3xl">
         Welcome to
         <br />
         <span className="bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent">
-          my digital humble abode
+          my digital front end showcase
         </span>
       </div>
-      
+
       <div className="mb-12">
         <p className="text-slate-400 text-lg my-2 text-center">
-          I'm an independent designer.
+          I'm a passionate Front End Web Developer.
         </p>
         <p className="text-slate-400 text-lg my-2 text-center">
-          My interest lies in brand experience, and user experience.
+          I specialize in building interactive, user-friendly web applications with modern technologies.
         </p>
       </div>
 
