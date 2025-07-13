@@ -12,25 +12,10 @@ const CursorEffect = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const styles = {
-    cursorEffect: {
-      position: 'absolute',
-      pointerEvents: 'none',
-      zIndex: 20,
-      width: '1.5rem',
-      height: '1.5rem',
-      background: '#22c55e',
-      borderRadius: '50%',
-      opacity: 0.2,
-      filter: 'blur(2px)',
-      transition: 'all 0.3s ease'
-    }
-  };
-
   return (
-    <div 
+    <div
+      className="absolute pointer-events-none z-20 w-6 h-6 bg-green-500 rounded-full opacity-20 blur-sm transition-all duration-300 ease-in-out"
       style={{
-        ...styles.cursorEffect,
         left: mousePosition.x - 12,
         top: mousePosition.y - 12,
       }}
