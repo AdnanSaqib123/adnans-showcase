@@ -8,6 +8,7 @@ import Courses from './Courses';
 import About from './About';
 import Contact from './Contact';
 import Footer from '../components/Footer';
+import GoToTop from '../components/GoToTop';
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <About />
       <Contact />
       <Footer />
+      <GoToTop />
     </>
   );
 };
