@@ -1,8 +1,82 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import profileImg from '../assets/images/profile1.jpg';
+import resumePDF from '../assets/MuhammadAdnanSaqibResume.pdf';
+import { Download } from 'phosphor-react';
 
 const HeroSection = () => {
-  // Smooth scroll to contact section
+  const [displayedName, setDisplayedName] = useState('');
+  const [displayedSubtitle, setDisplayedSubtitle] = useState('');
+  const fullName = "Muhammad Adnan Saqib";
+  const subtitles = [
+    "Front End Web Developer",
+    "React Developer",
+  ];
+
+  const [currentNameIndex, setCurrentNameIndex] = useState(0);
+  const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
+  const [currentSubtitleTextIndex, setCurrentSubtitleTextIndex] = useState(0);
+  const [isDeletingName, setIsDeletingName] = useState(false);
+  const [isDeletingSubtitle, setIsDeletingSubtitle] = useState(false);
+
+  // Name typing animation
+  useEffect(() => {
+    if (!isDeletingName) {
+      if (currentNameIndex < fullName.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedName(prev => prev + fullName[currentNameIndex]);
+          setCurrentNameIndex(prev => prev + 1);
+        }, 150);
+
+        return () => clearTimeout(timeout);
+      } else {
+
+        setTimeout(() => setIsDeletingName(true), 2000);
+      }
+    } else {
+      if (displayedName.length > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayedName(prev => prev.slice(0, -1));
+        }, 100);
+
+        return () => clearTimeout(timeout);
+      } else {
+        setIsDeletingName(false);
+        setCurrentNameIndex(0);
+      }
+    }
+  }, [currentNameIndex, isDeletingName, displayedName]);
+
+  // Subtitle typing animation
+  useEffect(() => {
+    if (!isDeletingSubtitle) {
+      const currentSubtitle = subtitles[currentSubtitleTextIndex];
+      if (currentSubtitleIndex < currentSubtitle.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedSubtitle(prev => prev + currentSubtitle[currentSubtitleIndex]);
+          setCurrentSubtitleIndex(prev => prev + 1);
+        }, 100);
+
+        return () => clearTimeout(timeout);
+      } else {
+
+        setTimeout(() => setIsDeletingSubtitle(true), 1500);
+      }
+    } else {
+      if (displayedSubtitle.length > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayedSubtitle(prev => prev.slice(0, -1));
+        }, 50);
+
+        return () => clearTimeout(timeout);
+      } else {
+        setIsDeletingSubtitle(false);
+        setCurrentSubtitleIndex(0);
+        setCurrentSubtitleTextIndex(prev => (prev + 1) % subtitles.length);
+      }
+    }
+  }, [currentSubtitleIndex, isDeletingSubtitle, displayedSubtitle, currentSubtitleTextIndex]);
+
   const handleLetsTalkClick = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -25,10 +99,12 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Hero Text */}
-      <div className="font-bold text-white mb-2 leading-tight text-center max-w-4xl text-[clamp(2.5rem,8vw,4.5rem)]">
-        Muhammad Adnan Saqib
+      <div className="font-bold text-green-500 mb-2 leading-tight text-center max-w-6xl text-[clamp(2.5rem,8vw,4.5rem)]">
+        <span className="border-r-2 border-green-500 animate-blink">
+          {displayedName}
+        </span>
       </div>
+
       <div className="font-bold text-white mb-6 leading-tight text-center max-w-4xl text-3xl">
         Welcome to
         <br />
@@ -39,14 +115,17 @@ const HeroSection = () => {
 
       <div className="mb-12">
         <p className="text-slate-400 text-lg my-2 text-center">
-          I'm a passionate Front End Web Developer.
+          I'm a passionate{' '}
+          <span className="text-green-500 font-semibold border-r-2 border-green-500 animate-blink">
+            {displayedSubtitle}
+          </span>
         </p>
         <p className="text-slate-400 text-lg my-2 text-center">
           I specialize in building interactive, user-friendly web applications with modern technologies.
         </p>
       </div>
 
-      {/* CTA Buttons */}
+      {/* Buttons */}
       <div className="flex gap-4 flex-wrap justify-center">
         <button
           className="bg-white text-slate-900 py-4 px-8 rounded-full font-medium border-none cursor-pointer flex items-center gap-2 transition-all duration-300 shadow hover:bg-slate-100 hover:scale-105 primary-button"
@@ -56,16 +135,16 @@ const HeroSection = () => {
           <span>Let's talk</span>
         </button>
         <a
-          href="/MuhammadAdnanSaqibResume.pdf"
-          download
+          href={resumePDF}
+          download="MuhammadAdnanSaqib-Resume.pdf"
           className="bg-slate-900 text-white py-4 px-8 rounded-full font-medium border border-slate-600 cursor-pointer flex items-center gap-2 transition-all duration-300 hover:bg-slate-800 hover:scale-105 secondary-button"
         >
           <span>Download CV</span>
-          <span>↗</span>
+          <Download className='w-5 h-5' />
         </a>
       </div>
     </div>
   );
 };
 
-export default HeroSection; 
+export default HeroSection;
