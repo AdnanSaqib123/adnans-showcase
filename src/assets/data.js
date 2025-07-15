@@ -1,57 +1,54 @@
 import profile1 from './images/profile1.jpg';
 import school from './images/school.jpg';
 import university from './images/university.jpg';
+import project1 from './images/Project1.jpg';
+import project2 from './images/Project2.jpg';
+import project3 from './images/Project3.jpg';
+import project4 from './images/Project4.jpg';
+import project5 from './images/Project5.jpg';
 
 // This is the data for the projects section 
 export const projects = [
   {
     id: 1,
-    title: 'Laywer Portfolio',
-    description: 'A modern lawyer portfolio website with advanced features including user authentication, payment processing, and admin dashboard.',
-    tags: ['React.js', 'Bootstrap'],
-    image: profile1,
-    link: 'https://adnansaqib123.github.io/lawyer-portfolio-in-React.js/'
+    title: 'U Right Way',
+    description: 'A responsive web application built using React.js, Vite, and Tailwind CSS.',
+    tags: ['React.js', 'Vite', 'Tailwind CSS', 'Responsiveness', 'API Integration', 'Redux', 'RTK Query'],
+    image: project1,
+    link: 'https://www.urightway.com'
   },
   {
     id: 2,
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio website showcasing creative work with smooth animations and modern design principles.',
-    tags: ['React', 'CSS3', 'JavaScript'],
-    image: profile1,
-    link: 'https://github.com/yourusername/portfolio-website'
+    title: 'U Right Way Admin',
+    description: 'An Admin Dashboard for the Urightway. This dashboard allows administrators to manage users, tests, results, and other content.',
+    tags: ['React.js', 'Vite', 'Tailwind CSS', 'Responsiveness', 'API Integration', 'Redux', 'RTK Query'],
+    image: project2,
+    link: 'https://urightway-admin.netlify.app'
   },
   {
     id: 3,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, team features, and progress tracking.',
-    tags: ['Vue.js', 'Firebase', 'Tailwind'],
-    image: profile1,
-    link: 'https://github.com/yourusername/task-management-app'
+    title: 'Client Portfolio',
+    description: 'A responsive portfolio website showcasing creative work with smooth animations and modern design principles.',
+    tags: ['HTML', 'CSS', 'Javascript', 'Responsiveness'],
+    image: project3,
+    link: 'https://adnansaqib123.github.io/Portfolio/'
   },
   {
     id: 4,
-    title: 'Weather Dashboard',
-    description: 'A real-time weather dashboard with location-based forecasts and interactive weather maps.',
-    tags: ['React', 'API', 'Chart.js'],
-    image: profile1,
-    link: 'https://github.com/yourusername/weather-dashboard'
+    title: 'Laywer Portfolio',
+    description: 'A modern lawyer portfolio website with advanced features including user authentication, payment processing, and admin dashboard.',
+    tags: ['React.js', 'Bootstrap', 'Google Search API', 'Responsiveness'],
+    image: project4,
+    link: 'https://adnansaqib123.github.io/lawyer-portfolio-in-React.js/'
   },
   {
     id: 5,
-    title: 'Social Media Clone',
-    description: 'A social media platform clone with features like posts, comments, likes, and user profiles.',
-    tags: ['React', 'Redux', 'Express'],
-    image: profile1,
-    link: 'https://github.com/yourusername/social-media-clone'
+    title: 'Blogger Website',
+    description: 'A blog website with features like posts, comments, likes, and user profiles.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'API Integration', 'JsonPlaceholder API', 'Ninjas API'],
+    image: project5,
+    link: 'https://adnansaqib123.github.io/Blog-Website-/'
   },
-  {
-    id: 6,
-    title: 'AI Chat Application',
-    description: 'An AI-powered chat application with natural language processing and intelligent responses.',
-    tags: ['React', 'OpenAI API', 'Socket.io'],
-    image: profile1,
-    link: 'https://github.com/yourusername/ai-chat-app'
-  }
 ];
 
 // This is the data for the contact section
