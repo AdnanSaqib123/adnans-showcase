@@ -2,26 +2,7 @@ import React, { useState } from 'react';
 import { contactInfo, socialLinks } from '../assets/data.js';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
-  };
+  const [status, setStatus] = useState(null);
 
   return (
     <section id="contact" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
@@ -57,15 +38,20 @@ const Contact = () => {
           </div>
         </div>
         {/* Contact Form */}
-        <form className="flex flex-col gap-6 " onSubmit={handleSubmit}>
+        <form
+          className="flex flex-col gap-6 "
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          onSubmit={() => setStatus('pending')}
+          onReset={() => setStatus(null)}
+        >
+          <input type="hidden" name="access_key" value="8de622ca-2e59-471f-9e44-9ca84a41b437" />
           <h3 className="text-white text-center sm:text-left text-2xl font-semibold mb-2">Send Message</h3>
           <div className="flex flex-col gap-2">
             <label className="text-white text-base font-medium">Name</label>
             <input
               type="text"
               name="name"
-              value={formData.name}
-              onChange={handleInputChange}
               placeholder="Enter your name"
               required
               className="p-4 bg-slate-800/60 border border-slate-600 rounded-lg text-white text-base focus:outline-none focus:border-green-500 transition-colors duration-300"
@@ -76,8 +62,6 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleInputChange}
               placeholder="Enter your email"
               required
               className="p-4 bg-slate-800/60 border border-slate-600 rounded-lg text-white text-base focus:outline-none focus:border-green-500 transition-colors duration-300"
@@ -87,8 +71,6 @@ const Contact = () => {
             <label className="text-white text-base font-medium">Message</label>
             <textarea
               name="message"
-              value={formData.message}
-              onChange={handleInputChange}
               placeholder="Enter your message"
               required
               className="p-4 bg-slate-800/60 border border-slate-600 rounded-lg text-white text-base min-h-[120px] resize-y focus:outline-none focus:border-green-500 transition-colors duration-300"
@@ -97,9 +79,16 @@ const Contact = () => {
           <button
             type="submit"
             className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            disabled={status === 'pending'}
           >
-            Send Message
+            {status === 'pending' ? 'Sending...' : 'Send Message'}
           </button>
+          {status === 'success' && (
+            <p className="text-green-400 text-center mt-2">Thank you for your message! I'll get back to you soon.</p>
+          )}
+          {status === 'error' && (
+            <p className="text-red-400 text-center mt-2">Something went wrong. Please try again.</p>
+          )}
         </form>
       </div>
     </section>
