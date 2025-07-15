@@ -71,12 +71,12 @@ const Navbar = () => {
       {/* Hamburger button for mobile */}
       <button
         ref={buttonRef}
-        className="sm:hidden flex items-center px-3 py-2 rounded text-slate-300 border border-slate-600 focus:outline-none mb-2 hover:bg-slate-800/50 transition-all duration-200"
+        className="sm:hidden flex items-center px-3 py-2 rounded text-slate-300 border border-slate-600 focus:outline-none mb-2 hover:bg-slate-800/50 transition-all duration-300"
         aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <div className="relative w-6 h-6">
-          <div className={`absolute inset-0 transition-all duration-300 ${menuOpen ? 'rotate-180 opacity-0' : 'rotate-0 opacity-100'}`}>
+          <div className={`absolute inset-0 transition-all duration-300 ${menuOpen ? 'rotate-360 opacity-0' : 'rotate-0 opacity-100'}`}>
             <List size={24} />
           </div>
           <div className={`absolute inset-0 transition-all duration-300 ${menuOpen ? 'rotate-0 opacity-100' : 'rotate-180 opacity-0'}`}>
@@ -118,7 +118,7 @@ const Navbar = () => {
               className={`text-slate-300 font-medium transition-all duration-300 cursor-pointer bg-none outline-none text-lg px-2 py-2 text-left hover:text-green-500 focus:text-green-500 hover:bg-slate-700/50 rounded-lg transform transition-transform relative group ${menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                 }`}
               style={{
-                transitionDelay: menuOpen ? `${index * 50}ms` : '0ms'
+                transitionDelay: menuOpen ? `${index * 100}ms` : '0ms'
               }}
             >
               {item.label}

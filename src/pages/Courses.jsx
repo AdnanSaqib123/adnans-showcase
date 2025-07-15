@@ -39,9 +39,9 @@ const Courses = () => {
   };
 
   return (
-    <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
-      <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-12 text-center">Professional Certifications & Courses</h2>
-      <p className="text-slate-400 text-md sm:text-xl text-center mb-16 max-w-4xl">Continuous learning journey through industry-recognized certifications and specialized courses.</p>
+    <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4">
+      <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-3 text-center">Professional Certifications & Courses</h2>
+      <p className="text-slate-400 text-md sm:text-xl text-center mb-12 max-w-4xl">Continuous learning journey through industry-recognized certifications and specialized courses.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full mb-12">
         {getCurrentCourses().map((course) => (
           <div

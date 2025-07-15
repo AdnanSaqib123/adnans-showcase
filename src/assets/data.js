@@ -1,5 +1,6 @@
 import profile1 from './images/profile1.jpg';
-// import profile2 from './images/profile2.jpg'; // Add more as needed
+import school from './images/school.jpg';
+import university from './images/university.jpg';
 
 // This is the data for the projects section 
 export const projects = [
@@ -133,5 +134,30 @@ export const coursesData = [
     description: 'A course designed to guide believers on their spiritual journey.',
     duration: '3 months',
     skills: ['Spirituality', 'Islamic Studies']
+  }
+];
+
+// This is the data for the education section
+export const educationData = [
+  {
+    id: 1,
+    degree: 'BS in Computer Science',
+    institution: 'Virtual University of Pakistan',
+    year: 'Current 6th Semester',
+    image: school,
+  },
+  {
+    id: 2,
+    degree: 'FSC (Pre-Engineering)',
+    institution: 'Army Public School and College, Sialkot Cantt',
+    year: 'Completed in 2021',
+    image: school,
+  },
+  {
+    id: 3,
+    degree: 'Matric (Science)',
+    institution: 'Army Public School Gul Mohar, Malir Cantt, Karachi',
+    year: 'Completed in 2019',
+    image: university,
   }
 ]; 

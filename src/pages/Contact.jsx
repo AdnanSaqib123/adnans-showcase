@@ -5,7 +5,7 @@ const Contact = () => {
   const [status, setStatus] = useState(null);
 
   return (
-    <section id="contact" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 py-10 sm:py-24">
+    <section id="contact" className="min-h-screen flex flex-col items-center justify-center px-4 pb-10">
       <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">Get In Touch</h2>
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Contact Info */}
