@@ -22,7 +22,7 @@ const About = () => {
         </div>
         {/* Image Section */}
         <div className="flex justify-center items-center order-2 mb-8 md:mb-0">
-          <div className="w-60 h-60 md:w-72 md:h-80 bg-gradient-to-br from-orange-400 to-pink-500 rounded-md p-1 flex items-center justify-center shadow-2xl animate-pulse-glow overflow-hidden transform transition-all duration-500 ease-out hover:rotate-x-12 hover:rotate-y-6 hover:scale-105 hover:shadow-3xl">
+          <div className="w-72 h-80 bg-gradient-to-br from-orange-400 to-pink-500 rounded-md p-1 flex items-center justify-center shadow-2xl animate-pulse-glow overflow-hidden transform transition-all duration-500 ease-out hover:rotate-x-12 hover:rotate-y-6 hover:scale-105 hover:shadow-3xl">
             <img
               src={profile2}
               alt="Profile"
