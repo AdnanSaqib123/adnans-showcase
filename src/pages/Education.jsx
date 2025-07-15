@@ -1,29 +1,5 @@
 import React from 'react';
-import profile1 from '../assets/images/profile1.jpg';
-
-const educationData = [
-  {
-    id: 1,
-    degree: 'BS in Computer Science',
-    institution: 'Virtual University of Pakistan',
-    year: 'Current 6th Semester',
-    image: profile1,
-  },
-  {
-    id: 2,
-    degree: 'FSC (Pre-Engineering)',
-    institution: 'Army Public School and College, Sialkot Cantt',
-    year: 'Completed in 2021',
-    image: profile1,
-  },
-  {
-    id: 3,
-    degree: 'Matric (Science)',
-    institution: 'Army Public School Gul Mohar, Malir Cantt, Karachi',
-    year: 'Completed in 2019',
-    image: profile1,
-  }
-];
+import { educationData } from '../assets/data.js';
 
 const Education = () => {
   return (
