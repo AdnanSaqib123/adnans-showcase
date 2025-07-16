@@ -109,7 +109,7 @@ const HeroSection = () => {
         Welcome to
         <br />
         <span className="bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent">
-          my digital front end showcase
+          my digital portfolio<span className='text-yellow-400 text-4xl'>🌟</span>
         </span>
       </div>
 
