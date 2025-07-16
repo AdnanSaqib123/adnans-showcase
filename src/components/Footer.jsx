@@ -1,32 +1,38 @@
 import React from 'react';
+import { LinkedinLogo, WhatsappLogo, EnvelopeSimple, FacebookLogo, GithubLogo } from 'phosphor-react';
+import { socialLinks } from '../assets/data';
+
+const iconMap = {
+  LinkedinLogo: <LinkedinLogo size={26} />,
+  WhatsappLogo: <WhatsappLogo size={26} />,
+  EnvelopeSimple: <EnvelopeSimple size={26} />,
+  FacebookLogo: <FacebookLogo size={26} />,
+  GithubLogo: <GithubLogo size={26} />,
+};
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: '🐙', label: 'GitHub' },
-    { icon: '💼', label: 'LinkedIn' },
-    { icon: '🐦', label: 'Twitter' },
-    { icon: '📸', label: 'Instagram' }
-  ];
-
   return (
     <footer className="bg-slate-900/90 backdrop-blur border-t border-slate-600 py-8 text-center w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-8">
         <div className="flex flex-col items-center gap-4">
           <div className="text-green-500 text-2xl font-bold mb-2">Adnan's Showcase</div>
           <p className="text-slate-400 text-base max-w-xl leading-relaxed">
-            Creating meaningful digital experiences through thoughtful design and innovative development. <br className="block" />
-            Let's bring your ideas to life together.
+            Crafting meaningful digital experiences through clean design and modern frontend development. <br className="block" />
+            Let's turn your ideas into reality.
           </p>
-          <div className="flex gap-4 mt-2">
+          <div className="flex gap-5 sm:gap-6 mt-2">
             {socialLinks.map((social, index) => (
-              <span
+              <a
                 key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 title={social.label}
-                className="text-slate-400 text-xl transition-colors duration-300 cursor-pointer"
+                className={`text-slate-400 transition-all duration-300 border rounded-full p-1.5 cursor-pointer transform hover:scale-110 ${social.color}`}
                 tabIndex={0}
               >
-                {social.icon}
-              </span>
+                {iconMap[social.iconName]}
+              </a>
             ))}
           </div>
           <div className="text-slate-500 text-sm mt-8 pt-4 border-t border-slate-600 w-full">
@@ -38,4 +44,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

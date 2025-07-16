@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
+import { LinkedinLogo, WhatsappLogo, EnvelopeSimple, FacebookLogo, GithubLogo } from 'phosphor-react';
 import { contactInfo, socialLinks } from '../assets/data.js';
+
+const iconMap = {
+  LinkedinLogo: <LinkedinLogo size={26} />,
+  WhatsappLogo: <WhatsappLogo size={26} />,
+  EnvelopeSimple: <EnvelopeSimple size={26} />,
+  FacebookLogo: <FacebookLogo size={26} />,
+  GithubLogo: <GithubLogo size={26} />,
+};
 
 const Contact = () => {
   const [status, setStatus] = useState(null);
@@ -23,16 +32,17 @@ const Contact = () => {
               </div>
             </div>
           ))}
-          <div className="flex justify-center gap-4 mt-4">
+          <div className="flex justify-center gap-3 sm:gap-4 mt-4">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
-                href={social.url}
+                href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-slate-800/60 border border-slate-600 rounded-full flex items-center justify-center text-2xl text-green-500 transition-all duration-300 hover:bg-green-500 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className={`w-12 h-12 bg-slate-800/60 border border-slate-600 rounded-full flex items-center justify-center text-2xl transition-all duration-300 hover:bg-green-500 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 ${social.color}`}
+                title={social.label}
               >
-                {social.icon}
+                {iconMap[social.iconName]}
               </a>
             ))}
           </div>
