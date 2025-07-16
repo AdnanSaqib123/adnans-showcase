@@ -61,10 +61,36 @@ export const contactInfo = [
 
 // This is the data for the social links section
 export const socialLinks = [
-  { icon: '🐙', url: 'https://github.com' },
-  { icon: '💼', url: 'https://linkedin.com' },
-  { icon: '🐦', url: 'https://twitter.com' },
-  { icon: '📸', url: 'https://instagram.com' }
+  {
+    iconName: 'LinkedinLogo',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/muhammad-adnan-saqib',
+    color: 'text-blue-600 hover:text-blue-700'
+  },
+  {
+    iconName: 'WhatsappLogo',
+    label: 'WhatsApp',
+    href: 'https://wa.me/+923195923729',
+    color: 'text-green-600 hover:text-green-700'
+  },
+  {
+    iconName: 'EnvelopeSimple',
+    label: 'Gmail',
+    href: 'https://mail.google.com/mail/?view=cm&to=adnansaqib205@gmail.com',
+    color: 'text-yellow-500 hover:text-yellow-700'
+  },
+  {
+    iconName: 'FacebookLogo',
+    label: 'Facebook',
+    href: 'https://facebook.com/adnan.saqib',
+    color: 'text-blue-500 hover:text-blue-600'
+  },
+  {
+    iconName: 'GithubLogo',
+    label: 'GitHub',
+    href: 'https://github.com/adnansaqib123',
+    color: 'text-gray-100 hover:text-gray-300'
+  },
 ];
 
 // This is the data for the courses section
