@@ -46,7 +46,7 @@ const Courses = () => {
         {getCurrentCourses().map((course) => (
           <div
             key={course.id}
-            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-8 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 group overflow-hidden"
+            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-7 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 group overflow-hidden"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl text-white ${getStatusClasses(course.status)}`}>
