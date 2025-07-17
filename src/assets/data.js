@@ -65,31 +65,31 @@ export const socialLinks = [
     iconName: 'LinkedinLogo',
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/muhammad-adnan-saqib',
-    color: 'text-blue-700 hover:text-blue-800'
+    color: 'text-blue-700 hover:text-white hover:bg-blue-600'
   },
   {
     iconName: 'WhatsappLogo',
     label: 'WhatsApp',
     href: 'https://wa.me/+923195923729',
-    color: 'text-green-700 hover:text-green-800'
+    color: 'text-green-700 hover:text-white hover:bg-green-600'
   },
   {
     iconName: 'EnvelopeSimple',
     label: 'Gmail',
     href: 'https://mail.google.com/mail/?view=cm&to=adnansaqib205@gmail.com',
-    color: 'text-yellow-700 hover:text-yellow-800'
+    color: 'text-yellow-700 hover:text-white hover:bg-yellow-600'
   },
   {
     iconName: 'FacebookLogo',
     label: 'Facebook',
     href: 'https://facebook.com/adnan.saqib',
-    color: 'text-blue-700 hover:text-blue-800'
+    color: 'text-blue-700 hover:text-white hover:bg-blue-400'
   },
   {
     iconName: 'GithubLogo',
     label: 'GitHub',
     href: 'https://github.com/adnansaqib123',
-    color: 'text-gray-100 hover:text-gray-300'
+    color: 'text-gray-100 hover:text-white hover:bg-black'
   },
 ];
 
@@ -183,4 +183,27 @@ export const educationData = [
     year: 'Completed in 2019',
     image: university,
   }
-]; 
+];
+
+// This is the data for the expereience section
+export const experienceData = [
+  {
+    title: 'Intern - Software Engineer',
+    company: 'Arpatech (Pvt) Ltd',
+    dates: '07/2024 - 09/2024',
+    location: 'Islamabad, Pakistan',
+    details: [
+      'Internship with software engineering tasks, contributing to projects and gaining practical experience.'
+    ]
+  },
+  {
+    title: 'Front End Web Developer',
+    company: 'U Group of Companies',
+    dates: '02/2025 - Present',
+    location: 'Islamabad, Pakistan',
+    details: [
+      'Developing modern front-end web applications using React.js and Tailwind CSS.',
+      'Implementing responsive design alongside API integrations.'
+    ]
+  }
+];
