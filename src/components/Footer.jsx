@@ -28,7 +28,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.label}
-                className={`text-slate-400 transition-all duration-300 border border-green-600 rounded-full p-1.5 cursor-pointer transform hover:scale-110 ${social.color}`}
+                className={`transition-all duration-300 border border-green-600 rounded-full p-1.5 cursor-pointer transform hover:scale-110 ${social.color}`}
                 tabIndex={0}
               >
                 {iconMap[social.iconName]}

@@ -45,7 +45,7 @@ const Work = () => {
         {getCurrentProjects().map((project) => (
           <div
             key={project.id}
-            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-8 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 group"
+            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-8 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10 group"
           >
             <div className="w-full h-48 bg-gradient-to-br from-slate-600 to-slate-500 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
               <img src={project.image} alt="Project" className="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-transform duration-300" />

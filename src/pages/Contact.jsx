@@ -39,7 +39,7 @@ const Contact = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-12 h-12 bg-slate-800/60 border border-green-600 rounded-full flex items-center justify-center text-2xl transition-all duration-300 hover:bg-green-500 hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 ${social.color}`}
+                className={`w-12 h-12 bg-slate-800/60 border border-green-600 rounded-full flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 ${social.color}`}
                 title={social.label}
               >
                 {iconMap[social.iconName]}

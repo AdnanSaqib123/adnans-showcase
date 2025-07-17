@@ -23,7 +23,7 @@ const Skills = () => {
         {skills.map((skill, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center justify-center bg-slate-800/60 border border-slate-600 rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300"
+            className="flex flex-col items-center justify-center bg-slate-800/60 border border-slate-600 rounded-xl p-6 shadow-md hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
           >
             <span className="text-4xl mb-2">{skill.icon}</span>
             <span className="text-white text-base font-semibold text-center">{skill.name}</span>
