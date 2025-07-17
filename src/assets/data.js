@@ -167,7 +167,7 @@ export const educationData = [
     degree: 'BS in Computer Science',
     institution: 'Virtual University of Pakistan',
     year: 'Current 6th Semester',
-    image: school,
+    image: university,
   },
   {
     id: 2,
@@ -181,7 +181,7 @@ export const educationData = [
     degree: 'Matric (Science)',
     institution: 'Army Public School Gul Mohar, Malir Cantt, Karachi',
     year: 'Completed in 2019',
-    image: university,
+    image: school,
   }
 ];
 
