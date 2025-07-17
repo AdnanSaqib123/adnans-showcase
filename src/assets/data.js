@@ -64,7 +64,7 @@ export const socialLinks = [
   {
     iconName: 'LinkedinLogo',
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/muhammad-adnan-saqib',
+    href: 'www.linkedin.com/in/muhammad-adnan-saqib-742703298',
     color: 'text-blue-700 hover:text-white hover:bg-blue-600'
   },
   {
@@ -82,13 +82,13 @@ export const socialLinks = [
   {
     iconName: 'FacebookLogo',
     label: 'Facebook',
-    href: 'https://facebook.com/adnan.saqib',
+    href: 'https://www.facebook.com/adnan.saqib.73997',
     color: 'text-blue-700 hover:text-white hover:bg-blue-400'
   },
   {
     iconName: 'GithubLogo',
     label: 'GitHub',
-    href: 'https://github.com/adnansaqib123',
+    href: 'https://github.com/AdnanSaqib123',
     color: 'text-gray-100 hover:text-white hover:bg-black'
   },
 ];
