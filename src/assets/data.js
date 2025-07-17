@@ -12,7 +12,7 @@ export const projects = [
   {
     id: 1,
     title: 'U Right Way',
-    description: 'A responsive web application built using React.js, Vite, and Tailwind CSS.',
+    description: 'A platform guiding students in academic learning and Islamic growth through structured daily engagement.',
     tags: ['React.js', 'Vite', 'Tailwind CSS', 'Responsiveness', 'API Integration', 'Redux', 'RTK Query'],
     image: project1,
     link: 'https://www.urightway.com'
@@ -36,7 +36,7 @@ export const projects = [
   {
     id: 4,
     title: 'Laywer Portfolio',
-    description: 'A modern lawyer portfolio website with advanced features including user authentication, payment processing, and admin dashboard.',
+    description: 'Developed a portfolio for a community of lawyers, showcasing profiles, expertise, and services to enhance their online presence.',
     tags: ['React.js', 'Bootstrap', 'Google Search API', 'Responsiveness'],
     image: project4,
     link: 'https://adnansaqib123.github.io/lawyer-portfolio-in-React.js/'
@@ -44,7 +44,7 @@ export const projects = [
   {
     id: 5,
     title: 'Blogger Website',
-    description: 'A blog website with features like posts, comments, likes, and user profiles.',
+    description: 'A blog website with features like posts, comments, likes, and user profiles — built with integrated APIs .',
     tags: ['HTML', 'CSS', 'JavaScript', 'API Integration', 'JsonPlaceholder API', 'Ninjas API'],
     image: project5,
     link: 'https://adnansaqib123.github.io/Blog-Website-/'
@@ -65,31 +65,31 @@ export const socialLinks = [
     iconName: 'LinkedinLogo',
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/muhammad-adnan-saqib',
-    color: 'text-blue-600 hover:text-blue-700'
+    color: 'text-blue-700 hover:text-white hover:bg-blue-600'
   },
   {
     iconName: 'WhatsappLogo',
     label: 'WhatsApp',
     href: 'https://wa.me/+923195923729',
-    color: 'text-green-600 hover:text-green-700'
+    color: 'text-green-700 hover:text-white hover:bg-green-600'
   },
   {
     iconName: 'EnvelopeSimple',
     label: 'Gmail',
     href: 'https://mail.google.com/mail/?view=cm&to=adnansaqib205@gmail.com',
-    color: 'text-yellow-500 hover:text-yellow-700'
+    color: 'text-yellow-700 hover:text-white hover:bg-yellow-600'
   },
   {
     iconName: 'FacebookLogo',
     label: 'Facebook',
     href: 'https://facebook.com/adnan.saqib',
-    color: 'text-blue-500 hover:text-blue-600'
+    color: 'text-blue-700 hover:text-white hover:bg-blue-400'
   },
   {
     iconName: 'GithubLogo',
     label: 'GitHub',
     href: 'https://github.com/adnansaqib123',
-    color: 'text-gray-100 hover:text-gray-300'
+    color: 'text-gray-100 hover:text-white hover:bg-black'
   },
 ];
 
@@ -120,23 +120,23 @@ export const coursesData = [
     status: 'completed',
     description: 'Covers the essentials of freelancing, including finding clients, managing projects, and building a successful freelance career.',
     duration: '3 months',
-    skills: ['Freelancing', 'Client Management', 'Project Management']
+    skills: ['Freelancing', 'Client Management']
   },
   {
     id: 4,
-    name: 'Communication and Soft Skills',
+    name: 'Communication & Soft Skills',
     issuer: 'DigiSkills',
     status: 'completed',
-    description: 'Focuses on effective communication, teamwork, and soft skills for professional growth.',
+    description: 'Focuses on effective spoken and written communication and soft skills for professional growth.',
     duration: '3 months',
-    skills: ['Communication', 'Teamwork', 'Soft Skills']
+    skills: ['Communication', 'Grammar', 'Soft Skills']
   },
   {
     id: 5,
     name: 'Introduction to Networks',
     issuer: 'VU-Cisco',
     status: 'completed',
-    description: 'Introduction to computer networks, networking concepts, and protocols.',
+    description: 'Introduction to computer networks, networking concepts, protocols, and device communication.',
     duration: '2 months',
     skills: ['Networking', 'Protocols', 'Cisco']
   },
@@ -145,18 +145,18 @@ export const coursesData = [
     name: 'Seerat-Circle Course',
     issuer: 'Al-Burhan',
     status: 'in-progress',
-    description: 'A course focused on the life and teachings of the Prophet Muhammad (PBUH).',
+    description: 'A course focused on the life and teachings of the Prophet Muhammad (PBUH), highlighting his character, leadership, and the moral values.',
     duration: '6 months',
-    skills: ['Islamic Studies', 'History']
+    skills: ['LifeOfTheProphet', 'IslamicLeadership']
   },
   {
     id: 7,
     name: "Believer's Journey Course",
     issuer: 'Al-Burhan',
     status: 'completed',
-    description: 'A course designed to guide believers on their spiritual journey.',
+    description: 'Learned about the lives and contributions of the Khulafa-e-Rashideen and their role in early Islamic history.',
     duration: '3 months',
-    skills: ['Spirituality', 'Islamic Studies']
+    skills: ['Spirituality', 'Islamic Studies', 'KhulafaeRashideen']
   }
 ];
 
@@ -183,4 +183,27 @@ export const educationData = [
     year: 'Completed in 2019',
     image: university,
   }
-]; 
+];
+
+// This is the data for the expereience section
+export const experienceData = [
+  {
+    title: 'Intern - Software Engineer',
+    company: 'Arpatech (Pvt) Ltd',
+    dates: '07/2024 - 09/2024',
+    location: 'Islamabad, Pakistan',
+    details: [
+      'Internship with software engineering tasks, contributing to projects and gaining practical experience.'
+    ]
+  },
+  {
+    title: 'Front End Web Developer',
+    company: 'U Group of Companies',
+    dates: '02/2025 - Present',
+    location: 'Islamabad, Pakistan',
+    details: [
+      'Developing modern front-end web applications using React.js and Tailwind CSS.',
+      'Implementing responsive design alongside API integrations.'
+    ]
+  }
+];

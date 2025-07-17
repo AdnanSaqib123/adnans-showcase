@@ -10,7 +10,7 @@ const Education = () => {
         {educationData.map((education) => (
           <div
             key={education.id}
-            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl px-2 py-4 sm:p-8 border border-slate-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 group overflow-hidden"
+            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl px-2 py-4 sm:p-8 border border-slate-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10 group overflow-hidden"
           >
             <div className="flex items-center gap-4 mb-6">
               <img src={education.image} alt="Profile" className="w-14 h-14 rounded-full object-cover border-2 border-emerald-500" />

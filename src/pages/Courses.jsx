@@ -39,14 +39,14 @@ const Courses = () => {
   };
 
   return (
-    <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4">
+    <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4 pt-6 sm:pt-0">
       <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-3 text-center">Professional Certifications & Courses</h2>
       <p className="text-slate-400 text-md sm:text-xl text-center mb-12 max-w-4xl">Continuous learning journey through industry-recognized certifications and specialized courses.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full mb-12">
         {getCurrentCourses().map((course) => (
           <div
             key={course.id}
-            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-8 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 group overflow-hidden"
+            className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-7 border border-slate-600 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10 group overflow-hidden"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl text-white ${getStatusClasses(course.status)}`}>
