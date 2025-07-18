@@ -10,9 +10,9 @@ import Contact from './Contact';
 import Footer from '../components/Footer';
 import GoToTop from '../components/GoToTop';
 
-const Home = () => {
+export default function Home() {
   return (
-    <>
+    <div data-aos="fade-up">
       <HeroSection />
       <Experience />
       <Work />
@@ -23,8 +23,6 @@ const Home = () => {
       <Contact />
       <Footer />
       <GoToTop />
-    </>
+    </div>
   );
 };
-
-export default Home;

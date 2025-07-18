@@ -5,11 +5,15 @@ import CursorEffect from './components/CursorEffect';
 import Loader from './components/Loader';
 import Home from './pages/Home';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Initialize AOS for scroll animations
+    AOS.init({ once: false });
     // Simulate loading time and hide loader
     const timer = setTimeout(() => {
       setIsLoading(false);
