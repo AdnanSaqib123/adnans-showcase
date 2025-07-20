@@ -91,7 +91,7 @@ const HeroSection = () => {
         <img
           src={profileImg}
           alt="Profile"
-          className="w-28 h-28 rounded-full object-cover mb-4 shadow-lg border-4 border-orange-400 animate-pulse-glow"
+          className="w-28 h-28 rounded-full object-cover mb-4 shadow-lg border-4 border-orange-400 animate-pulse-glow hover:scale-110 transition-transform duration-300"
         />
         <div className="flex items-center gap-2 bg-slate-800/80 backdrop-blur rounded-full px-4 py-2 border border-slate-600">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -109,7 +109,7 @@ const HeroSection = () => {
         Welcome to
         <br />
         <span className="bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent">
-          my digital portfolio<span className='text-yellow-400 text-4xl'>🌟</span>
+          my digital portfolio <span className='text-yellow-400 text-4xl'>🌟</span>
         </span>
       </div>
 

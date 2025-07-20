@@ -4,7 +4,7 @@ import { experienceData } from '../assets/data.js';
 
 const Experience = () => {
   return (
-    <section id="experience" className="min-h-screen flex flex-col items-center justify-center px-4 pt-6">
+    <section id="experience" className="flex flex-col items-center justify-center px-4 py-16">
       <div data-aos="fade-up" className="max-w-6xl w-full">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-3 text-center">
           Professional Journey

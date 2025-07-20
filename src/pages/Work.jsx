@@ -33,8 +33,8 @@ const Work = () => {
   };
 
   return (
-    <div data-aos="fade-up">
-      <section id="work" className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <section id="work" className="flex flex-col items-center justify-center px-4 py-16">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-3 text-center">
           My Work
         </h2>
