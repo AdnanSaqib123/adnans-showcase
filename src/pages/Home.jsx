@@ -12,17 +12,19 @@ import GoToTop from '../components/GoToTop';
 
 export default function Home() {
   return (
-    <div data-aos="fade-up" className="gap-4">
-      <HeroSection />
-      <Experience />
-      <Work />
-      <Skills />
-      <Education />
-      <Courses />
-      <About />
-      <Contact />
-      <Footer />
+    <>
+      <div data-aos="fade-up" className="gap-4">
+        <HeroSection />
+        <Experience />
+        <Work />
+        <Skills />
+        <Education />
+        <Courses />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
       <GoToTop />
-    </div>
+    </>
   );
 };
