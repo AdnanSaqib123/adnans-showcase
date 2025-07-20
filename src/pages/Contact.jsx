@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { LinkedinLogo, WhatsappLogo, EnvelopeSimple, FacebookLogo, GithubLogo } from 'phosphor-react';
+import { FaLinkedin, FaWhatsapp, FaFacebook, FaGithub } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import { contactInfo, socialLinks } from '../assets/data.js';
+import { FiSend } from 'react-icons/fi';
 
 const iconMap = {
-  LinkedinLogo: <LinkedinLogo size={26} />,
-  WhatsappLogo: <WhatsappLogo size={26} />,
-  EnvelopeSimple: <EnvelopeSimple size={26} />,
-  FacebookLogo: <FacebookLogo size={26} />,
-  GithubLogo: <GithubLogo size={26} />,
+  LinkedinLogo: <FaLinkedin size={26} />,
+  WhatsappLogo: <FaWhatsapp size={26} />,
+  EnvelopeSimple: <MdEmail size={26} />,
+  FacebookLogo: <FaFacebook size={26} />,
+  GithubLogo: <FaGithub size={26} />,
 };
 
 const Contact = () => {
@@ -90,10 +92,10 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="flex justify-center items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 disabled={status === 'pending'}
               >
-                {status === 'pending' ? 'Sending...' : 'Send Message'}
+                {status === 'pending' ? 'Sending...' : (<><span>Send Message</span><FiSend size={20} className="ml-2" /></>)}
               </button>
               {status === 'success' && (
                 <p className="text-green-400 text-center mt-2">Thank you for your message! I'll get back to you soon.</p>

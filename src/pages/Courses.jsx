@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { coursesData } from '../assets/data.js';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const getStatusClasses = (status) => {
   switch (status) {
@@ -89,6 +90,7 @@ const Courses = () => {
             className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentPage === 0}
           >
+            <FiChevronLeft size={20} />
             Previous
           </button>
           {/* Dot Indicators */}
@@ -112,6 +114,7 @@ const Courses = () => {
             disabled={currentPage === totalPages - 1}
           >
             Next
+            <FiChevronRight size={20} />
           </button>
         </div>
       </section>

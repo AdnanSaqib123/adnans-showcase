@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin } from 'phosphor-react';
+import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
 import { experienceData } from '../assets/data.js';
 
 const Experience = () => {
@@ -28,7 +28,7 @@ const Experience = () => {
               <div data-aos="flip-right" className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-5 border border-slate-700 w-full md:w-5/12 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="p-3 bg-blue-500/20 rounded-lg">
-                    <Briefcase size={24} className="text-blue-400" />
+                    <FiBriefcase size={24} className="text-blue-400" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
@@ -38,11 +38,11 @@ const Experience = () => {
 
                 <div className="flex gap-6 mb-6">
                   <div className="flex items-center gap-2 text-slate-300">
-                    <Calendar size={18} className="text-slate-400" />
+                    <FiCalendar size={18} className="text-slate-400" />
                     <span>{exp.dates}</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-300">
-                    <MapPin size={18} className="text-slate-400" />
+                    <FiMapPin size={18} className="text-slate-400" />
                     <span>{exp.location}</span>
                   </div>
                 </div>

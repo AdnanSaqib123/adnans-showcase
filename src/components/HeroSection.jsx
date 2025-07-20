@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import profileImg from '../assets/images/profile1.jpg';
 import resumePDF from '../assets/MuhammadAdnanSaqibResume.pdf';
-import { Download } from 'phosphor-react';
+import { FiDownload } from 'react-icons/fi';
 
 const HeroSection = () => {
   const [displayedName, setDisplayedName] = useState('');
@@ -140,7 +140,7 @@ const HeroSection = () => {
           className="bg-slate-900 text-white py-4 px-8 rounded-full font-medium border border-slate-600 cursor-pointer flex items-center gap-2 transition-all duration-300 hover:bg-slate-800 hover:scale-105 secondary-button"
         >
           <span>Download CV</span>
-          <Download className='w-5 h-5' />
+          <FiDownload className='w-5 h-5' />
         </a>
       </div>
     </div>
