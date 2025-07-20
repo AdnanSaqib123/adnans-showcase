@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { List, X } from 'phosphor-react';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -77,10 +77,10 @@ const Navbar = () => {
       >
         <div className="relative w-6 h-6">
           <div className={`absolute inset-0 transition-all duration-300 ${menuOpen ? 'rotate-360 opacity-0' : 'rotate-0 opacity-100'}`}>
-            <List size={24} />
+            <FiMenu size={24} />
           </div>
           <div className={`absolute inset-0 transition-all duration-300 ${menuOpen ? 'rotate-0 opacity-100' : 'rotate-180 opacity-0'}`}>
-            <X size={24} />
+            <FiX size={24} />
           </div>
         </div>
       </button>

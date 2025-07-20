@@ -13,6 +13,8 @@ A personal portfolio website built using **React.js**, **Vite**, and **Tailwind 
 - Tailwind CSS
 - JavaScript (ES6+)
 - Responsive Design
+- React-Icons
+- Web3Form API
 
  ## Why do you need a portfolio?
 Professional way to showcase your work

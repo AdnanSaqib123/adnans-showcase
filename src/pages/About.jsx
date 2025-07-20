@@ -3,8 +3,8 @@ import profile2 from '../assets/images/profile2.jpg';
 
 const About = () => {
   return (
-    <div data-aos="fade-up">
-      <section id="about" className="min-h-screen flex flex-col items-center justify-center px-4 bg-transparent">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <section id="about" className="flex flex-col items-center justify-center px-4 py-16 bg-transparent">
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Content Section */}
           <div className="flex flex-col gap-4 order-1">

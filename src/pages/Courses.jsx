@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { coursesData } from '../assets/data.js';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const getStatusClasses = (status) => {
   switch (status) {
@@ -39,8 +40,8 @@ const Courses = () => {
   };
 
   return (
-    <div data-aos="fade-up">
-      <section id="courses" className="min-h-screen flex flex-col items-center justify-center px-4 pt-6 sm:pt-0">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <section id="courses" className="flex flex-col items-center justify-center px-4 py-16">
         <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-3 text-center">Professional Certifications & Courses</h2>
         <p className="text-slate-400 text-md sm:text-xl text-center mb-12 max-w-4xl">Continuous learning journey through industry-recognized certifications and specialized courses.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full mb-12">
@@ -89,6 +90,7 @@ const Courses = () => {
             className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentPage === 0}
           >
+            <FiChevronLeft size={20} />
             Previous
           </button>
           {/* Dot Indicators */}
@@ -112,6 +114,7 @@ const Courses = () => {
             disabled={currentPage === totalPages - 1}
           >
             Next
+            <FiChevronRight size={20} />
           </button>
         </div>
       </section>

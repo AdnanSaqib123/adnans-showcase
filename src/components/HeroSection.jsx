@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import profileImg from '../assets/images/profile1.jpg';
 import resumePDF from '../assets/MuhammadAdnanSaqibResume.pdf';
-import { Download } from 'phosphor-react';
+import { FiDownload } from 'react-icons/fi';
 
 const HeroSection = () => {
   const [displayedName, setDisplayedName] = useState('');
@@ -91,7 +91,7 @@ const HeroSection = () => {
         <img
           src={profileImg}
           alt="Profile"
-          className="w-28 h-28 rounded-full object-cover mb-4 shadow-lg border-4 border-orange-400 animate-pulse-glow"
+          className="w-28 h-28 rounded-full object-cover mb-4 shadow-lg border-4 border-orange-400 animate-pulse-glow hover:scale-110 transition-transform duration-300"
         />
         <div className="flex items-center gap-2 bg-slate-800/80 backdrop-blur rounded-full px-4 py-2 border border-slate-600">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -109,7 +109,7 @@ const HeroSection = () => {
         Welcome to
         <br />
         <span className="bg-gradient-to-br from-white to-slate-300 bg-clip-text text-transparent">
-          my digital portfolio<span className='text-yellow-400 text-4xl'>🌟</span>
+          my digital portfolio <span className='text-yellow-400 text-4xl'>🌟</span>
         </span>
       </div>
 
@@ -140,7 +140,7 @@ const HeroSection = () => {
           className="bg-slate-900 text-white py-4 px-8 rounded-full font-medium border border-slate-600 cursor-pointer flex items-center gap-2 transition-all duration-300 hover:bg-slate-800 hover:scale-105 secondary-button"
         >
           <span>Download CV</span>
-          <Download className='w-5 h-5' />
+          <FiDownload className='w-5 h-5' />
         </a>
       </div>
     </div>

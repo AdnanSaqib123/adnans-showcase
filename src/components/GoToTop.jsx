@@ -1,4 +1,4 @@
-import { ArrowUp } from 'phosphor-react';
+import { FiArrowUp } from 'react-icons/fi';
 import React, { useState, useEffect } from 'react';
 
 const GoToTop = () => {
@@ -36,7 +36,7 @@ const GoToTop = () => {
           className="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           aria-label="Go to top"
         >
-          <ArrowUp className='w-6 h-6' />
+          <FiArrowUp className='w-6 h-6' />
         </button>
       )}
     </>

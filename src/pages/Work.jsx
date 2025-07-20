@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { projects } from '../assets/data.js';
-import { Eye, CaretLeft, CaretRight } from 'phosphor-react';
+import { FiEye, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Work = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -33,8 +33,8 @@ const Work = () => {
   };
 
   return (
-    <div data-aos="fade-up">
-      <section id="work" className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <section id="work" className="flex flex-col items-center justify-center px-4 py-16">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-3 text-center">
           My Work
         </h2>
@@ -71,7 +71,7 @@ const Work = () => {
                 onClick={() => handlePreviewClick(project.link)}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
               >
-                <Eye size={20} weight="bold" />
+                <FiEye size={20} />
                 Preview Project
               </button>
             </div>
@@ -86,7 +86,7 @@ const Work = () => {
             className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentPage === 0}
           >
-            <CaretLeft size={20} weight="bold" />
+            <FiChevronLeft size={20} />
             Previous
           </button>
 
@@ -112,7 +112,7 @@ const Work = () => {
             disabled={currentPage === totalPages - 1}
           >
             Next
-            <CaretRight size={20} weight="bold" />
+            <FiChevronRight size={20} />
           </button>
         </div>
       </section>

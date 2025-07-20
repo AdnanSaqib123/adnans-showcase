@@ -1,13 +1,14 @@
 import React from 'react';
-import { LinkedinLogo, WhatsappLogo, EnvelopeSimple, FacebookLogo, GithubLogo } from 'phosphor-react';
+import { FaLinkedin, FaWhatsapp, FaFacebook, FaGithub } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import { socialLinks } from '../assets/data';
 
 const iconMap = {
-  LinkedinLogo: <LinkedinLogo size={26} />,
-  WhatsappLogo: <WhatsappLogo size={26} />,
-  EnvelopeSimple: <EnvelopeSimple size={26} />,
-  FacebookLogo: <FacebookLogo size={26} />,
-  GithubLogo: <GithubLogo size={26} />,
+  LinkedinLogo: <FaLinkedin size={26} />,
+  WhatsappLogo: <FaWhatsapp size={26} />,
+  EnvelopeSimple: <MdEmail size={26} />,
+  FacebookLogo: <FaFacebook size={26} />,
+  GithubLogo: <FaGithub size={26} />,
 };
 
 const Footer = () => {
