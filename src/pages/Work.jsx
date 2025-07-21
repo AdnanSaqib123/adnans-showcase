@@ -118,18 +118,8 @@ const Work = () => {
                 <FiChevronLeft size={20} />
                 Previous
               </button>
-              <div className="flex gap-3">
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePageClick(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${index === currentPage
-                      ? 'bg-blue-500 shadow-lg shadow-blue-500/50'
-                      : 'bg-gray-500 hover:bg-gray-400'
-                      }`}
-                    aria-label={`Go to page ${index + 1}`}
-                  />
-                ))}
+              <div className="text-white font-semibold text-base">
+                {currentPage + 1} of {totalPages}
               </div>
               <button
                 onClick={handleNextPage}
@@ -188,18 +178,8 @@ const Work = () => {
                 <FiChevronLeft size={20} />
                 Previous
               </button>
-              <div className="flex gap-3">
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePageClick(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${index === currentPage
-                      ? 'bg-blue-500 shadow-lg shadow-blue-500/50'
-                      : 'bg-gray-500 hover:bg-gray-400'
-                      }`}
-                    aria-label={`Go to page ${index + 1}`}
-                  />
-                ))}
+              <div className="text-white font-semibold text-base">
+                {currentPage + 1} of {totalPages}
               </div>
               <button
                 onClick={handleNextPage}
