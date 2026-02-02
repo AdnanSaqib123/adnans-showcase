@@ -166,7 +166,7 @@ export const educationData = [
     id: 1,
     degree: 'BS in Computer Science',
     institution: 'Virtual University of Pakistan',
-    year: 'Current 6th Semester',
+    year: 'Current 8th Semester',
     image: university,
   },
   {
@@ -199,7 +199,7 @@ export const experienceData = [
   {
     title: 'Front End Web Developer',
     company: 'U Group of Companies',
-    dates: '02/2025 - Present',
+    dates: '02/2025 - 07/2025',
     location: 'Islamabad, Pakistan',
     details: [
       'Developing modern front-end web applications using React.js and Tailwind CSS.',
