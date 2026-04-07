@@ -166,7 +166,7 @@ export const educationData = [
     id: 1,
     degree: 'BS in Computer Science',
     institution: 'Virtual University of Pakistan',
-    year: 'Current 8th Semester',
+    year: 'Completed in 2026',
     image: university,
   },
   {

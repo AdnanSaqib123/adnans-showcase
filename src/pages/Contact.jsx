@@ -16,12 +16,12 @@ const Contact = () => {
   const [status, setStatus] = useState(null);
 
   return (
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <section id="contact" className="flex flex-col items-center justify-center px-4 py-16">
+    <div>
+      <section id="contact" className="flex flex-col items-center justify-center px-4 py-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">Get In Touch</h2>
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Contact Info */}
-          <div data-aos="fade-right" className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <h3 className="text-white text-2xl text-center sm:text-left font-semibold mb-2">Let's Connect</h3>
             {contactInfo.map((info, index) => (
               <div
@@ -35,7 +35,7 @@ const Contact = () => {
                 </div>
               </div>
             ))}
-            <div data-aos="fade-up" className="flex justify-center gap-3 sm:gap-4 mt-4">
+            <div className="flex justify-center gap-3 sm:gap-4 mt-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
           </div>
           {/* Contact Form */}
-          <div data-aos="fade-left">
+          <div>
             <form
               className="flex flex-col gap-6 "
               action="https://api.web3forms.com/submit"
