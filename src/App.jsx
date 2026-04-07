@@ -13,20 +13,32 @@ function App() {
 
   useEffect(() => {
     // Initialize AOS for scroll animations with mobile-friendly settings
-    AOS.init({ 
-      once: false,
+    AOS.init({
+      once: true,
       offset: 50,
       delay: 50,
       duration: 800,
       easing: 'ease-out-cubic',
     });
-    
+
+    // Refresh AOS after initial render to ensure proper initialization
+    const refreshTimer = setTimeout(() => {
+      AOS.refresh();
+    }, 100);
+
     // Simulate loading time and hide loader
     const timer = setTimeout(() => {
       setIsLoading(false);
+      // Refresh AOS again after loader is done
+      setTimeout(() => {
+        AOS.refresh();
+      }, 50);
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(refreshTimer);
+    };
   }, []);
 
   if (isLoading) {
