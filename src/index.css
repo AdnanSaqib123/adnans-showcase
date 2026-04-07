@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure AOS animations are visible on all devices */
-[data-aos] {
-  will-change: transform, opacity;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
 @keyframes scroll {
     0% {
         transform: translateX(0);

@@ -67,7 +67,7 @@ const Courses = () => {
   const currentCourses = getCurrentCourses();
 
   return (
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div>
       <section id="courses" className="flex flex-col items-center justify-center px-4 py-16">
         <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-3 text-center">Professional Certifications & Courses</h2>
         <p className="text-slate-400 text-md sm:text-xl text-center mb-12 max-w-4xl">Continuous learning journey through industry-recognized certifications and specialized courses.</p>

@@ -3,7 +3,7 @@ import profile2 from '../assets/images/profile2.jpg';
 
 const About = () => {
   return (
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div>
       <section id="about" className="flex flex-col items-center justify-center px-4 py-16 bg-transparent">
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Content Section */}
@@ -22,7 +22,7 @@ const About = () => {
             </p>
           </div>
           {/* Image Section */}
-          <div data-aos="zoom-in" className="flex justify-center items-center order-2 mb-8 md:mb-0">
+          <div className="flex justify-center items-center order-2 mb-8 md:mb-0">
             <div className="w-72 h-80 bg-gradient-to-br from-orange-400 to-pink-500 rounded-md p-1 flex items-center justify-center shadow-2xl animate-pulse-glow overflow-hidden transform transition-all duration-500 ease-out hover:rotate-x-12 hover:rotate-y-6 hover:scale-105 hover:shadow-3xl">
               <img
                 src={profile2}
