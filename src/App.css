@@ -95,15 +95,10 @@ body {
 .animate-scroll {
   display: flex;
   width: max-content;
-  animation: scroll-x 20s linear infinite;
+  animation: scroll-x 30s linear infinite;
   will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .animate-scroll {
-    animation: scroll-x 12s linear infinite;
-  }
-}
 
 /* Button hover effects */
 .primary-button:hover {

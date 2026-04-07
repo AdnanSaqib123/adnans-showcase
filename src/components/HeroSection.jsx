@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import profileImg from '../assets/images/profile1.jpg';
-import resumePDF from '../assets/MuhammadAdnanSaqibResume.pdf';
+import resumePDF from '../assets/ADNAN-CV-1.pdf';
 import { FiDownload } from 'react-icons/fi';
 
 const HeroSection = () => {
