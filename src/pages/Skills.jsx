@@ -34,8 +34,8 @@ export default function Skills() {
         <h2 className="text-3xl sm:text-5xl font-bold text-white mb-3 text-center">Skills & Expertise</h2>
         <p className="text-slate-400 text-lg text-center mb-12 max-w-2xl">My technical skills and tools I use to bring ideas to life.</p>
 
-        <div className="w-full max-w-6xl overflow-x-hidden pt-6">
-          <div className="flex animate-scroll">
+        <div className="w-full max-w-6xl overflow-hidden pt-6">
+          <div className="flex animate-scroll" style={{ width: 'max-content' }}>
             {/* First set of skills */}
             {skills.map((skill, idx) => (
               <div
