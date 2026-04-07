@@ -12,8 +12,15 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize AOS for scroll animations
-    AOS.init({ once: false });
+    // Initialize AOS for scroll animations with mobile-friendly settings
+    AOS.init({ 
+      once: false,
+      offset: 50,
+      delay: 50,
+      duration: 800,
+      easing: 'ease-out-cubic',
+    });
+    
     // Simulate loading time and hide loader
     const timer = setTimeout(() => {
       setIsLoading(false);
