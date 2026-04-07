@@ -11,14 +11,10 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center md:text-left">About Me</h2>
             <p className="text-green-500 text-lg font-semibold mb-4 text-center md:text-left">Passionate Frontend Web Developer</p>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed">
-              I'm Front End Web Developer with 6 months of experience building responsive
-              web applications using HTML, CSS, JavaScript, React.js, Vite, and Tailwind
-              CSS.
+              Enthusiastic and detail-driven Front-End Web Developer with over 6 months of hands-on experience in creating modern, responsive, and pixel-perfect web applications. Skilled in HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, React.js, and Vue.js, with a solid understanding of UI/UX principles and API integration.
             </p>
             <p className="text-slate-300 text-base md:text-lg leading-relaxed">
-              Currently pursuing a BS in Computer Science while applying hands-on
-              skills in API integration and UI development. Passionate about problem-solving
-              and continuous learning in a collaborative environment.
+              Passionate about building clean, efficient, and visually engaging interfaces that deliver seamless user experiences. A fast learner and collaborative team player, eager to explore new technologies and contribute to impactful digital products.
             </p>
           </div>
           {/* Image Section */}
