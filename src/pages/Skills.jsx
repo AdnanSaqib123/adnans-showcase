@@ -30,7 +30,7 @@ const skills = [
 export default function Skills() {
   return (
     <div>
-      <section id="skills" className="flex flex-col items-center justify-center px-4 py-16">
+      <section id="skills" className="flex flex-col items-center justify-center px-4 py-6">
         <h2 className="text-3xl sm:text-5xl font-bold text-white mb-3 text-center">Skills & Expertise</h2>
         <p className="text-slate-400 text-lg text-center mb-12 max-w-2xl">My technical skills and tools I use to bring ideas to life.</p>
 

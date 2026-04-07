@@ -4,7 +4,7 @@ import { educationData } from '../assets/data.js';
 export default function Education() {
   return (
     <div>
-      <section id="education" className="flex flex-col items-center justify-center px-4 py-16">
+      <section id="education" className="flex flex-col items-center justify-center px-4 py-6">
         <h2 className="text-3xl sm:text-5xl font-bold text-white mb-3 text-center">Education</h2>
         <p className="text-slate-400 text-lg text-center mb-12 max-w-2xl">My academic journey and formal education background.</p>
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">

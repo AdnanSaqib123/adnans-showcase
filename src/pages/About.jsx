@@ -4,7 +4,7 @@ import profile2 from '../assets/images/profile2.jpg';
 const About = () => {
   return (
     <div>
-      <section id="about" className="flex flex-col items-center justify-center px-4 py-16 bg-transparent">
+      <section id="about" className="flex flex-col items-center justify-center px-4 py-6 bg-transparent">
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Content Section */}
           <div className="flex flex-col gap-4 order-1">

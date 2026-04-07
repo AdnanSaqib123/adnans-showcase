@@ -17,7 +17,7 @@ const Contact = () => {
 
   return (
     <div>
-      <section id="contact" className="flex flex-col items-center justify-center px-4 py-16">
+      <section id="contact" className="flex flex-col items-center justify-center px-4 py-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">Get In Touch</h2>
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Contact Info */}

@@ -62,7 +62,7 @@ const Work = () => {
 
   return (
     <div>
-      <section id="work" className="flex flex-col items-center justify-center px-4 py-16">
+      <section id="work" className="flex flex-col items-center justify-center px-4 py-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-3 text-center">
           My Work
         </h2>
