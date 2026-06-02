@@ -7,11 +7,12 @@ import {
   SiVuedotjs,
   SiBootstrap,
   SiTailwindcss,
-  SiFigma,
   SiGit,
   SiGithub,
+  SiFigma,
 } from 'react-icons/si';
 import { FaMicrosoft } from 'react-icons/fa';
+import { AiFillApi } from "react-icons/ai";
 
 const skills = [
   { name: 'HTML', icon: <SiHtml5 />, color: 'text-orange-500' },
@@ -20,10 +21,11 @@ const skills = [
   { name: 'React.js', icon: <SiReact />, color: 'text-blue-400' },
   { name: 'Vue.js', icon: <SiVuedotjs />, color: 'text-green-500' },
   { name: 'Bootstrap', icon: <SiBootstrap />, color: 'text-purple-500' },
-  { name: 'Tailwind', icon: <SiTailwindcss />, color: 'text-cyan-400' },
-  { name: 'Figma', icon: <SiFigma />, color: 'text-purple-400' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'text-cyan-400' },
+  { name: 'API Integration', icon: <AiFillApi />, color: 'text-teal-400' },
   { name: 'Git', icon: <SiGit />, color: 'text-orange-600' },
   { name: 'GitHub', icon: <SiGithub />, color: 'text-gray-200' },
+  { name: 'Figma', icon: <SiFigma />, color: 'text-purple-400' },
   { name: 'MS Office', icon: <FaMicrosoft />, color: 'text-green-400' },
 ];
 
