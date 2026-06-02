@@ -1,6 +1,7 @@
 import profile1 from './images/profile1.jpg';
 import school from './images/school.jpg';
 import university from './images/university.jpg';
+import qams from './images/qams.png';
 import project1 from './images/Project1.jpg';
 import project2 from './images/Project2.jpg';
 import project3 from './images/Project3.jpg';
@@ -11,6 +12,14 @@ import project5 from './images/Project5.jpg';
 export const projects = [
   {
     id: 1,
+    title: 'QAMS - FYP',
+    description: 'A web application that designed to automate evaluation, streamline academic record-keeping, and reduce paperwork for teachers and students.',
+    tags: ['Laravel', 'MySQL', 'Blade Templates', 'Tailwind CSS', 'JavaScript', 'Font Awesome Icons', 'Responsiveness'],
+    image: qams,
+    link: 'https://qams.free.laravel.cloud'
+  },
+  {
+    id: 2,
     title: 'U Right Way',
     description: 'A platform guiding students in academic learning and Islamic growth through structured daily engagement.',
     tags: ['React.js', 'Vite', 'Tailwind CSS', 'Responsiveness', 'API Integration', 'Redux', 'RTK Query'],
@@ -18,7 +27,7 @@ export const projects = [
     link: 'https://www.urightway.com'
   },
   {
-    id: 2,
+    id: 3,
     title: 'U Right Way Admin',
     description: 'An Admin Dashboard for the Urightway. This dashboard allows administrators to manage users, tests, results, and other content.',
     tags: ['React.js', 'Vite', 'Tailwind CSS', 'Responsiveness', 'API Integration', 'Redux', 'RTK Query'],
@@ -26,7 +35,7 @@ export const projects = [
     link: 'https://urightway-admin.netlify.app'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Client Portfolio',
     description: 'A responsive portfolio website showcasing creative work with smooth animations and modern design principles.',
     tags: ['HTML', 'CSS', 'Javascript', 'Responsiveness'],
@@ -34,7 +43,7 @@ export const projects = [
     link: 'https://adnansaqib123.github.io/Portfolio/'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Laywer Portfolio',
     description: 'Developed a portfolio for a community of lawyers, showcasing profiles, expertise, and services to enhance their online presence.',
     tags: ['React.js', 'Bootstrap', 'Google Search API', 'Responsiveness'],
@@ -42,7 +51,7 @@ export const projects = [
     link: 'https://adnansaqib123.github.io/lawyer-portfolio-in-React.js/'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Blogger Website',
     description: 'A blog website with features like posts, comments, likes, and user profiles — built with integrated APIs .',
     tags: ['HTML', 'CSS', 'JavaScript', 'API Integration', 'JsonPlaceholder API', 'Ninjas API'],
@@ -144,7 +153,7 @@ export const coursesData = [
     id: 6,
     name: 'Seerat-Circle Course',
     issuer: 'Al-Burhan',
-    status: 'in-progress',
+    status: 'completed',
     description: 'A course focused on the life and teachings of the Prophet Muhammad (PBUH), highlighting his character, leadership, and the moral values.',
     duration: '6 months',
     skills: ['LifeOfTheProphet', 'IslamicLeadership']
@@ -202,8 +211,7 @@ export const experienceData = [
     dates: '02/2025 - 07/2025',
     location: 'Islamabad, Pakistan',
     details: [
-      'Developing modern front-end web applications using React.js and Tailwind CSS.',
-      'Implementing responsive design alongside API integrations.'
+      'Developing modern, responsive front-end web applications using React.js and Tailwind CSS with integrated APIs.'
     ]
   }
 ];
